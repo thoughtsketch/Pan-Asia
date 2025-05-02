@@ -7,16 +7,16 @@
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-white text-gray-900">
+<body class="bg-white text-black">
 
   <!-- Hero Section with Background and Navbar -->
-  <div class="w-full h-screen bg-[url('https://images.unsplash.com/9/fields.jpg?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxMXx8bGVudGFscyUyMGZhcm18ZW58MHwwfHx8MTcxMjc0NjE1OXww&ixlib=rb-4.0.3&q=80&w=1080')] bg-center bg-cover bg-no-repeat relative">
+  <div class="w-full h-screen bg-[url('./assets/RENDER004.jpg')] bg-center bg-cover bg-no-repeat relative">
 
     <!-- Navbar -->
-    <header class="md:w-[80%] xs:w-[90%] mx-auto rounded-xl border-b-4 border-black/20 px-4 flex flex-wrap items-center py-4 shadow-lg">
+    <header class="md:w-[90%] bg-black opacity-80 color-black xs:w-[90%] mx-auto rounded-b-xl border-b-4 border-black/20 px-4 flex flex-wrap items-center py-4 shadow-lg">
       <div class="flex-1 flex justify-between items-center">
-        <h2 class="py-2 px-4 bg-sky-300/20 border-2 border-dashed rounded-full text-4xl font-serif font-semibold text-gray-100">
-          BEER
+        <h2 class="py-2 w-120 h-14 px-4 bg-sky-300/20 border-2 rounded-full text-4xl font-serif font-semibold">
+         <img class="w-full h-full overflow-hidden" src="./assets/white logo.png" alt="">
         </h2>
       </div>
 
@@ -34,7 +34,7 @@
       <!-- Navigation Links -->
       <div class="hidden md:flex md:items-center md:w-auto w-full z-10" id="menu">
         <nav>
-          <ul class="md:flex items-center justify-between text-base text-gray-100 pt-4 md:pt-0">
+          <ul class="md:flex items-center justify-between text-base text-white opacity-100 pt-4 md:pt-0">
             <li><a class="md:p-4 py-3 px-0 block hover:text-green-300 transition" href="#">Home</a></li>
             <li><a class="md:p-4 py-3 px-0 block hover:text-green-300 transition" href="#">Products</a></li>
             <li><a class="md:p-4 py-3 px-0 block hover:text-green-300 transition" href="#">Shop</a></li>
@@ -78,23 +78,23 @@
   
 
 
-    <footer class="bg-[#1B1C24] text-white rounded-tl-[40px] rounded-tr-[40px] px-6 md:px-16 lg:px-24 pt-16 pb-8 max-w-[1440px] mx-auto">
+    <footer class="bg-[#1B1C24] text-white rounded-tl-[40px] rounded-tr-[40px] px-6 md:px-16 lg:px-24 pt-16 pb-8 max-w-full mx-auto">
         <div class="flex flex-col md:flex-row md:justify-between gap-10">
       
           <!-- Left Section: Logo Image -->
           <div class="flex flex-col gap-6">
             <img
-              src="https://via.placeholder.com/64x64?text=Logo"
+              src="./assets/white logo.png"
               alt="Positivus Logo"
-              class="w-16 h-16"
+              class="w-48 h-16"
             />
       
             <!-- Contact Info -->
             <div class="flex flex-col gap-2 mt-4">
-              <span class="bg-[#C1F651] text-black font-semibold px-2 py-1 rounded-md inline-block w-fit">
+              <span class="bg-[#e5b56d] text-black font-semibold px-2 py-1 rounded-md inline-block w-fit">
                 Contact us:
               </span>
-              <p>Email: info@positivus.com</p>
+              <p>Email: info@panaisa.com</p>
               <p>Phone: 555-567-8901</p>
               <p>
                 Address: 1234 Main St<br />
@@ -128,8 +128,8 @@
       
           <!-- Right Subscription Box (Input Removed) -->
           <div>
-            <button class="bg-[#C1F651] text-black font-semibold rounded-lg py-3 px-4 hover:bg-lime-400">
-              Subscribe to news
+            <button class="bg-[#e5b56d] text-black font-semibold rounded-lg py-3 px-4 hover:bg-lime-400">
+              Download Brochure
             </button>
           </div>
           
@@ -141,9 +141,9 @@
       
         <!-- Footer Bottom -->
         <div class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-300 gap-2">
-          <p>© 2025 Positivus. All Rights Reserved.</p>
-          <a href="#" class="underline hover:text-white">Privacy Policy</a>
-          <a href="#" class="underline hover:text-white">Terms & Condition</a>
+          <p>© 2025 PANASIA All Rights Reserved.</p>
+          <a href="./privacy-policy.html" class="underline hover:text-white">Privacy Policy</a>
+          <p class="underline hover:text-white">Terms & Condition</a>
         </div>
       </footer>
 </body>
