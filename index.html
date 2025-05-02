@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,204 +8,455 @@
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="bg-white text-black">
 
   <!-- Modal Overlay -->
-<div id="contactModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-  <!-- Form Card -->
-  <div class="bg-white rounded-lg shadow-lg overflow-hidden max-w-sm lg:max-w-4xl w-full relative">
-    <!-- Close Button -->
-<button onclick="closeModal()" class="absolute top-2 right-2 text-black hover:text-gray-800 text-4xl font-extrabold leading-none">&times;</button>
+  <div id="contactModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+    <!-- Form Card -->
+    <div class="bg-white rounded-lg shadow-lg overflow-hidden max-w-sm lg:max-w-4xl w-full relative">
+      <!-- Close Button -->
+      <button onclick="closeModal()"
+        class="absolute top-2 right-2 text-black hover:text-gray-800 text-4xl font-extrabold leading-none">&times;</button>
 
-    <!-- Your full form -->
-    <div class="flex flex-col lg:flex-row">
-      <!-- Left image -->
-      <div class="hidden lg:block lg:w-1/2 bg-cover"
-        style="background-image:url('https://images.unsplash.com/photo-1536147116438-62679a5e01f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80')">
-      </div>
-
-      <!-- Right form section -->
-      <div class="w-full p-8 lg:w-1/2">
-        <!-- Logo -->
-        <div class="flex justify-center mb-4">
-          <img src="your-logo-url.png" alt="Logo" class="h-12">
+      <!-- Your full form -->
+      <div class="flex flex-col lg:flex-row">
+        <!-- Left image -->
+        <div class="hidden lg:block lg:w-1/2 bg-cover"
+          style="background-image:url('https://images.unsplash.com/photo-1536147116438-62679a5e01f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80')">
         </div>
 
-        <p class="text-xl text-gray-600 text-center">Get in Touch</p>
+        <!-- Right form section -->
+        <div class="w-full p-8 lg:w-1/2">
+          <!-- Logo -->
+          <div class="flex justify-center mb-4">
+            <img src="./assets/final logoo.jpg" alt="Logo" class="h-12">
+          </div>
 
-        <div class="mt-4">
-          <label class="block text-gray-700 text-sm font-bold mb-2">Full Name</label>
-          <input type="text" placeholder="John Doe"
-            class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full" />
-        </div>
+          <p class="text-xl text-gray-600 text-center">Get in Touch</p>
 
-        <div class="mt-4">
-          <label class="block text-gray-700 text-sm font-bold mb-2">Email Address</label>
-          <input type="email" placeholder="john@example.com"
-            class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full" />
-        </div>
+          <div class="mt-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2">Full Name</label>
+            <input type="text" placeholder="John Doe"
+              class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full" />
+          </div>
 
-        <div class="mt-4">
-          <label class="block text-gray-700 text-sm font-bold mb-2">Phone Number</label>
-          <input type="tel" placeholder="+1 234 567 8901"
-            class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full" />
-        </div>
+          <div class="mt-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2">Email Address</label>
+            <input type="email" placeholder="john@example.com"
+              class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full" />
+          </div>
 
-        <div class="mt-6">
-          <label class="inline-flex items-start space-x-2">
-            <input type="checkbox" class="mt-1 form-checkbox h-4 w-4 text-gray-700">
-            <span class="text-s text-gray-600 leading-snug">
-              I authorize Pan Asis and its representatives to Call, SMS, Email, or WhatsApp me about its products and offers. This consent overrides any registration for DNC / NDNC.
-            </span>
-          </label>
-        </div>
+          <div class="mt-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2">Phone Number</label>
+            <input type="tel" placeholder="+1 234 567 8901"
+              class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full" />
+          </div>
 
-        <div class="mt-6">
-          <button class="bg-[#e5b56d] text-white font-bold py-2 px-4 w-full rounded-3xl hover:bg-gray-600">Submit</button>
+          <div class="mt-6">
+            <label class="inline-flex items-start space-x-2">
+              <input type="checkbox" class="mt-1 form-checkbox h-4 w-4 text-gray-700">
+              <span class="text-s text-gray-600 leading-snug">
+                I authorize Pan Asis and its representatives to Call, SMS, Email, or WhatsApp me about its products and
+                offers. This consent overrides any registration for DNC / NDNC.
+              </span>
+            </label>
+          </div>
+
+          <div class="mt-6">
+            <button
+              class="bg-[#e5b56d] text-white font-bold py-2 px-4 w-full rounded-3xl hover:bg-gray-600">Submit</button>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
 
-  <!-- Hero Section with Background and Navbar -->
-  <div class="w-full h-screen bg-[url('./assets/RENDER004.jpg')] bg-center bg-cover bg-no-repeat relative">
 
-    <!-- Navbar -->
-    <header class="md:w-[90%] bg-black opacity-80 color-black xs:w-[90%] mx-auto rounded-b-xl border-b-4 border-black/20 px-4 flex flex-wrap items-center py-4 shadow-lg">
-      <div class="flex-1 flex justify-between items-center">
-        <h2 class="py-2 w-120 h-14 px-4 bg-sky-300/20 border-2 rounded-full text-4xl font-serif font-semibold">
-         <img class="w-full h-full overflow-hidden" src="./assets/white logo.png" alt="">
-        </h2>
-      </div>
+  <!-- Navborrredd -->
 
-      <!-- Mobile Menu Icon -->
-      <label for="menu-toggle" class="cursor-pointer md:hidden block">
-        <svg class="fill-current text-gray-100" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-          <title>menu</title>
-          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-        </svg>
-      </label>
+  <nav x-data="{ isOpen: false }" class="relative overflow-hidden rounded-xl border border-blue-500/20">
+    <!-- Animated Background -->
+    <div class="absolute inset-0 bg-gradient-to-r from-green-950 via-green-900 to-green-950 backdrop-blur-md"></div>
+    
+    <!-- Floating Bubbles -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute h-4 w-4 rounded-full bg-blue-400/10 animate-float top-4 left-[10%]"></div>
+        <div class="absolute h-3 w-3 rounded-full bg-blue-400/10 animate-float top-8 left-[20%] [animation-delay:0.5s]"></div>
+        <div class="absolute h-5 w-5 rounded-full bg-blue-400/10 animate-float top-6 left-[80%] [animation-delay:1s]"></div>
+        <div class="absolute h-6 w-6 rounded-full bg-blue-400/10 animate-float top-2 left-[60%] [animation-delay:1.5s]"></div>
+    </div>
 
-      <!-- Hidden Checkbox for Mobile Toggle -->
-      <input class="hidden" type="checkbox" id="menu-toggle" />
+    <!-- Main Navbar Content -->
+    <div class="relative px-4 sm:px-8 py-4">
+        <div class="flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center space-x-3 group">
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-lg blur group-hover:blur-md transition-all duration-300"></div>
+                    <svg class="relative w-8 sm:w-10 h-8 sm:h-10 text-white transform group-hover:scale-110 transition-transform duration-300" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M21.721 12.752a9.711 9.711 0 00-.945-5.003 12.754 12.754 0 01-4.339 2.708 18.991 18.991 0 01-.214 4.772 17.165 17.165 0 005.498-2.477zM14.634 15.55a17.324 17.324 0 00.332-4.647c-.952.227-1.945.347-2.966.347-1.021 0-2.014-.12-2.966-.347a17.515 17.515 0 00.332 4.647 17.385 17.385 0 005.268 0zM9.772 17.119a18.963 18.963 0 004.456 0A17.182 17.182 0 0112 21.724a17.18 17.18 0 01-2.228-4.605zM7.777 15.23a18.87 18.87 0 01-.214-4.774 12.753 12.753 0 01-4.34-2.708 9.711 9.711 0 00-.944 5.004 17.165 17.165 0 005.498 2.477zM21.356 14.752a9.765 9.765 0 01-7.478 6.817 18.64 18.64 0 001.988-4.718 18.627 18.627 0 005.49-2.098zM2.644 14.752c1.682.971 3.53 1.688 5.49 2.099a18.64 18.64 0 001.988 4.718 9.765 9.765 0 01-7.478-6.816zM13.878 2.43a9.755 9.755 0 016.116 3.986 11.267 11.267 0 01-3.746 2.504 18.63 18.63 0 00-2.37-6.49zM12 2.276a17.152 17.152 0 012.805 7.121c-.897.23-1.837.353-2.805.353-.968 0-1.908-.122-2.805-.353A17.151 17.151 0 0112 2.276zM10.122 2.43a18.629 18.629 0 00-2.37 6.49 11.266 11.266 0 01-3.746-2.504 9.755 9.755 0 016.116-3.985z"/>
+                    </svg>
+                </div>
+                <span class="text-xl sm:text-2xl font-bold text-white">OceanUI</span>
+            </div>
 
-      <!-- Navigation Links -->
-      <div class="hidden md:flex md:items-center md:w-auto w-full z-10" id="menu">
-        <nav>
-          <ul class="md:flex items-center justify-between text-base text-white opacity-100 pt-4 md:pt-0">
-            <li><a class="md:p-4 py-3 px-0 block hover:text-green-300 transition" href="#">Home</a></li>
-            <li><a class="md:p-4 py-3 px-0 block hover:text-green-300 transition" href="#">Products</a></li>
-            <li><a class="md:p-4 py-3 px-0 block hover:text-green-300 transition" href="#">Shop</a></li>
-            <li><a class="md:p-4 py-3 px-0 block hover:text-green-300 transition" href="#">About</a></li>
-            <li><a class="md:p-4 py-3 px-0 block hover:text-green-300 transition" href="#">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <!-- End Navbar -->
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center space-x-10">
+                <a href="#" class="relative group">
+                    <span class="text-blue-100 group-hover:text-white transition-colors duration-300">Home</span>
+                    <div class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-cyan-400 group-hover:w-full transition-all duration-300"></div>
+                    <div class="absolute -bottom-1 left-0 w-0 h-0.5 bg-white/20 group-hover:w-full transition-all duration-500 delay-100"></div>
+                </a>
+                <a href="#" class="relative group">
+                    <span class="text-blue-100 group-hover:text-white transition-colors duration-300">Features</span>
+                    <div class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-cyan-400 group-hover:w-full transition-all duration-300"></div>
+                    <div class="absolute -bottom-1 left-0 w-0 h-0.5 bg-white/20 group-hover:w-full transition-all duration-500 delay-100"></div>
+                </a>
+                <a href="#" class="relative group">
+                    <span class="text-blue-100 group-hover:text-white transition-colors duration-300">About</span>
+                    <div class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-cyan-400 group-hover:w-full transition-all duration-300"></div>
+                    <div class="absolute -bottom-1 left-0 w-0 h-0.5 bg-white/20 group-hover:w-full transition-all duration-500 delay-100"></div>
+                </a>
+                <a href="#" class="relative group">
+                    <span class="text-blue-100 group-hover:text-white transition-colors duration-300">Contact</span>
+                    <div class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-cyan-400 group-hover:w-full transition-all duration-300"></div>
+                    <div class="absolute -bottom-1 left-0 w-0 h-0.5 bg-white/20 group-hover:w-full transition-all duration-500 delay-100"></div>
+                </a>
+            </div>
 
-  </div>
+            <!-- Right Side Buttons -->
+            <div class="flex items-center space-x-4">
+                <!-- CTA Button (Hidden on smallest screens) -->
+                <button class="hidden sm:flex relative group">
+                    <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-lg blur opacity-60 group-hover:opacity-100 transition duration-200"></div>
+                    <div class="relative px-5 sm:px-7 py-2 sm:py-3 bg-blue-950 rounded-lg leading-none flex items-center">
+                        <div class="flex items-center space-x-2">
+                            <span class="text-blue-200 group-hover:text-white transition duration-200">+91xxxxxxxxxx</span>
+                            <svg class="w-5 h-5 text-blue-200 group-hover:text-white transform group-hover:translate-x-1 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                            </svg>
+                        </div>
+                    </div>
+                </button>
+
+                <!-- Mobile Menu Button -->
+                <button @click="isOpen = !isOpen" class="md:hidden relative group" aria-label="Toggle mobile menu">
+                    <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-cyan-400 rounded blur opacity-60 group-hover:opacity-100 transition duration-200"></div>
+                    <div class="relative p-2 bg-blue-950 rounded leading-none">
+                        <svg x-show="!isOpen" class="w-6 h-6 text-blue-200 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                        <svg x-show="isOpen" class="w-6 h-6 text-blue-200 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div x-show="isOpen" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 -translate-y-2" class="relative mt-4 md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 bg-blue-900/50 backdrop-blur-sm rounded-lg border border-blue-500/10">
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-blue-100 hover:text-white hover:bg-blue-800/50 transition-all duration-200">Home</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-blue-100 hover:text-white hover:bg-blue-800/50 transition-all duration-200">Features</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-blue-100 hover:text-white hover:bg-blue-800/50 transition-all duration-200">About</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-blue-100 hover:text-white hover:bg-blue-800/50 transition-all duration-200">Contact</a>
+                <!-- Mobile CTA Button -->
+                <div class="px-3 py-2">
+                    <button class="w-full relative group">
+                        <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-lg blur opacity-60 group-hover:opacity-100 transition duration-200"></div>
+                        <div class="relative px-4 py-2 bg-blue-950 rounded-lg leading-none flex items-center justify-center">
+                            <span class="text-blue-200 group-hover:text-white transition duration-200">Get Started</span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Alpine.js for mobile menu -->
+<script src="//unpkg.com/alpinejs" defer></script>
+
+
+
+
 
   <!-- Section 2: Plant Intro -->
   <section">
     <div class="flex flex-wrap">
-    <div class="w-full sm:w-8/12 mb-10">
-      <div class="container mx-auto h-full sm:p-10">
-        <nav class="flex px-4 justify-between items-center">
-          <div class="text-4xl font-bold">
-            Plant<span class="text-green-700">.</span>
-          </div>
-          <div>
-            <img src="https://image.flaticon.com/icons/svg/497/497348.svg" alt="" class="w-8">
-          </div>
-        </nav>
-        <header class="container px-4 lg:flex mt-10 items-center h-full lg:mt-0">
-          <div class="w-full">
-            <h1 class="text-4xl lg:text-6xl font-bold">Find your <span class="text-green-700">greeny</span> stuff for your room</h1>
-            <div class="w-20 h-2 bg-green-700 my-4"></div>
-            <p class="text-xl mb-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae maiores neque eaque ea odit placeat, tenetur illum distinctio nulla voluptatum a corrupti beatae tempora aperiam quia id aliquam possimus aut.</p>
-            <button class="bg-green-500 text-white text-2xl font-medium px-4 py-2 rounded shadow">Learn More</button>
-          </div>
-        </header>
+      <div class="w-full sm:w-8/12 mb-10">
+        <div class="container mx-auto h-full sm:p-10">
+          <nav class="flex px-4 justify-between items-center">
+            <div class="text-4xl font-bold">
+              Plant<span class="text-green-700">.</span>
+            </div>
+            <div>
+              <img src="https://image.flaticon.com/icons/svg/497/497348.svg" alt="" class="w-8">
+            </div>
+          </nav>
+          <header class="container px-4 lg:flex mt-10 items-center h-full lg:mt-0">
+            <div class="w-full">
+              <h1 class="text-4xl lg:text-6xl font-bold">Find your <span class="text-green-700">greeny</span> stuff for
+                your room</h1>
+              <div class="w-20 h-2 bg-green-700 my-4"></div>
+              <p class="text-xl mb-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae maiores neque
+                eaque ea odit placeat, tenetur illum distinctio nulla voluptatum a corrupti beatae tempora aperiam quia
+                id aliquam possimus aut.</p>
+              <button class="bg-green-500 text-white text-2xl font-medium px-4 py-2 rounded shadow">Learn More</button>
+            </div>
+          </header>
+        </div>
       </div>
+      <img
+        src="https://images.unsplash.com/photo-1536147116438-62679a5e01f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+        alt="Leafs" class="w-full h-48 object-cover sm:h-screen sm:w-4/12">
     </div>
-    <img src="https://images.unsplash.com/photo-1536147116438-62679a5e01f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" alt="Leafs" class="w-full h-48 object-cover sm:h-screen sm:w-4/12">
-  </div>
-  </section>
-  
-  
+    </section>
 
 
-    <footer class="bg-[#1B1C24] text-white rounded-tl-[40px] rounded-tr-[40px] px-6 md:px-16 lg:px-24 pt-16 pb-8 max-w-full mx-auto">
-        <div class="flex flex-col md:flex-row md:justify-between gap-10">
-      
-          <!-- Left Section: Logo Image -->
-          <div class="flex flex-col gap-6">
-            <img
-              src="./assets/white logo.png"
-              alt="Positivus Logo"
-              class="w-48 h-16"
-            />
-      
-            <!-- Contact Info -->
-            <div class="flex flex-col gap-2 mt-4">
-              <span class="bg-[#e5b56d] text-black font-semibold px-2 py-1 rounded-md inline-block w-fit">
-                Contact us:
-              </span>
-              <p>Email: info@panaisa.com</p>
-              <p>Phone: 555-567-8901</p>
-              <p>
-                Address: 1234 Main St<br />
-                Moonstone City, Stardust State 12345
+    
+
+    <!-- Section 4 : Numbers Section -->
+    <section>
+      <section class="flex flex-col mt-20">
+        <p class="font-semibold text-2xl md:text-3xl text-center">Our Outstanding Achievements</p>
+        <div
+          class="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-y-5 lg:gap-y-0 gap-x-5 place-items-center w-full mx-auto max-w-7xl px-5">
+          <div
+            class="flex flex-col justify-center items-center bg-[#FFF6F3] px-4 h-[126px] w-[100%] md:w-[281px] md:h-[192px] rounded-lg justify-self-center">
+            <div class="flex flex-row justify-center items-center">
+              <svg class="w-[35px] h-[35px] md:w-[50px] md:h-[50px]" viewBox="0 0 50 50" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M39.37 18.432c0 3.058-.906 5.862-2.466 8.203a14.728 14.728 0 0 1-10.079 6.367c-.717.127-1.455.19-2.214.19-.759 0-1.497-.063-2.214-.19a14.728 14.728 0 0 1-10.078-6.368 14.692 14.692 0 0 1-2.467-8.202c0-8.16 6.6-14.76 14.76-14.76s14.759 6.6 14.759 14.76Z"
+                  stroke="#FF6D42" stroke-width="3.473" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path
+                  d="m44.712 38.17-3.431.83a2.063 2.063 0 0 0-1.539 1.572l-.728 3.122c-.09.384-.281.734-.554 1.012a2.068 2.068 0 0 1-.992.564c-.375.09-.768.073-1.134-.052a2.078 2.078 0 0 1-.938-.653l-9.92-11.64-9.92 11.661a2.078 2.078 0 0 1-.938.653 2.038 2.038 0 0 1-1.134.052 2.067 2.067 0 0 1-.992-.563 2.137 2.137 0 0 1-.554-1.012l-.728-3.123a2.13 2.13 0 0 0-.55-1.01 2.06 2.06 0 0 0-.988-.562L6.24 38.19a2.073 2.073 0 0 1-.956-.533 2.14 2.14 0 0 1-.563-.953 2.175 2.175 0 0 1-.015-1.113c.091-.366.276-.7.536-.97l8.11-8.284a14.672 14.672 0 0 0 4.307 4.281 14.34 14.34 0 0 0 5.634 2.134 12.29 12.29 0 0 0 2.183.191c.749 0 1.477-.063 2.184-.19 4.138-.617 7.694-3.017 9.94-6.416l8.11 8.285c1.144 1.147.583 3.165-.998 3.547Zm-18.03-26.532 1.227 2.507c.167.34.603.68.998.743l2.226.383c1.414.233 1.747 1.296.727 2.336l-1.726 1.764c-.29.297-.457.87-.353 1.295l.499 2.188c.395 1.721-.5 2.4-1.996 1.487l-2.08-1.253a1.434 1.434 0 0 0-1.372 0l-2.08 1.253c-1.497.892-2.392.234-1.996-1.487l.499-2.188c.083-.403-.063-.998-.354-1.295l-1.726-1.764c-1.019-1.04-.686-2.081.728-2.336l2.225-.383c.375-.063.811-.403.977-.743l1.227-2.507c.604-1.36 1.685-1.36 2.35 0Z"
+                  stroke="#FF6D42" stroke-width="3.473" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+              <p class="font-bold text-3xl sm:text-4xl lg:text-5xl leading-9 text-primary ml-2">75K+</p>
+            </div>
+            <p class="font-medium text-base sm:text-lg leading-6 mt-3 md:mt-6 text-center">Expert Chat &amp; Call
+              Minutes</p>
+          </div>
+          <div
+            class="flex flex-col justify-center items-center bg-[#FFF6F3] px-4 h-[126px] w-[100%] md:w-[281px] md:h-[192px] rounded-lg justify-self-center">
+            <div class="flex flex-row justify-center items-center">
+              <svg class="w-[35px] h-[35px] md:w-[50px] md:h-[50px]" viewBox="0 0 51 50" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#a)">
+                  <path
+                    d="m26.91 5.776 4.483 10.683a1.544 1.544 0 0 0 1.287.942l11.474.992a1.544 1.544 0 0 1 .876 2.715L36.325 28.7a1.559 1.559 0 0 0-.49 1.523l2.61 11.296a1.544 1.544 0 0 1-2.295 1.677l-9.86-5.982a1.53 1.53 0 0 0-1.59 0l-9.861 5.982a1.544 1.544 0 0 1-2.295-1.677l2.609-11.296a1.56 1.56 0 0 0-.49-1.523l-8.705-7.593a1.544 1.544 0 0 1 .876-2.715l11.474-.992a1.544 1.544 0 0 0 1.287-.942l4.483-10.683a1.544 1.544 0 0 1 2.833 0Z"
+                    stroke="#FF6D42" stroke-width="4.341" stroke-linecap="round" stroke-linejoin="round"></path>
+                </g>
+                <defs>
+                  <clipPath id="a">
+                    <path fill="#fff" d="M.8.2h49.4v49.4H.8z"></path>
+                  </clipPath>
+                </defs>
+              </svg>
+              <p class="font-bold text-3xl sm:text-4xl lg:text-5xl leading-9 text-primary ml-2">4.9</p>
+            </div>
+            <p class="font-medium text-base sm:text-lg leading-6 mt-3 md:mt-6 text-center">Average Expert Rating</p>
+          </div>
+          <div
+            class="flex flex-col justify-center items-center bg-[#FFF6F3] px-4 h-[126px] w-[100%] md:w-[281px] md:h-[192px] rounded-lg justify-self-center">
+            <div class="flex flex-row justify-center items-center">
+              <svg class="w-[35px] h-[35px] md:w-[50px] md:h-[50px]" viewBox="0 0 50 50" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#a)" stroke="#FF6D42" stroke-width="3.473" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path
+                    d="M10.811 39.091c-1.775-1.775-.598-5.505-1.5-7.69-.939-2.255-4.377-4.089-4.377-6.5 0-2.413 3.438-4.246 4.376-6.502.903-2.182-.274-5.914 1.501-7.69 1.776-1.775 5.508-.598 7.69-1.5 2.266-.939 4.09-4.377 6.501-4.377 2.412 0 4.246 3.438 6.501 4.376 2.185.903 5.915-.274 7.69 1.501 1.776 1.776.598 5.506 1.502 7.69.937 2.266 4.376 4.09 4.376 6.501 0 2.412-3.439 4.246-4.377 6.501-.903 2.185.274 5.915-1.5 7.69-1.776 1.776-5.506.598-7.69 1.501-2.256.938-4.09 4.377-6.502 4.377s-4.245-3.439-6.5-4.377c-2.183-.903-5.915.275-7.69-1.5Z">
+                  </path>
+                  <path d="m17.281 26.444 4.632 4.631L32.718 20.27"></path>
+                </g>
+                <defs>
+                  <clipPath id="a">
+                    <path fill="#fff" d="M.3.2h49.4v49.4H.3z"></path>
+                  </clipPath>
+                </defs>
+              </svg>
+              <p class="font-bold text-3xl sm:text-4xl lg:text-5xl leading-9 text-primary ml-2">8900+</p>
+            </div>
+            <p class="font-medium text-base sm:text-lg leading-6 mt-3 md:mt-6 text-center">Sessions Completed</p>
+          </div>
+          <div
+            class="flex flex-col justify-center items-center bg-[#FFF6F3] px-4 h-[126px] w-[100%] md:w-[281px] md:h-[192px] rounded-lg justify-self-center">
+            <div class="flex flex-row justify-center items-center">
+              <svg class="w-[35px] h-[35px] md:w-[50px] md:h-[50px]" viewBox="0 0 51 50" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M45.571 12.006 27.046 30.531l-7.719-7.718L5.434 36.706" stroke="#FF6D42" stroke-width="4.341"
+                  stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M45.569 24.356v-12.35h-12.35" stroke="#FF6D42" stroke-width="4.341" stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg>
+              <p class="font-bold text-3xl sm:text-4xl lg:text-5xl leading-9 text-primary ml-2">1.5M+</p>
+            </div>
+            <p class="font-medium text-base sm:text-lg leading-6 mt-3 md:mt-6 text-center">App Downloads</p>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- Section 5: Amenities -->
+    <section>
+      <div class="container relative z-40 mx-auto mt-12">
+
+        <div class="flex justify-center items-center">
+          <h1>Amenities</h1>
+        </div>
+
+        <div class="flex flex-wrap justify-center mx-auto lg:w-full md:w-5/6 xl:shadow-small-blue">
+
+          <a href="#" class="block w-1/2 py-10 text-center border lg:w-1/4">
+            <div>
+              <img src="https://redpixelthemes.com/assets/images/icon-portfolio-green.svg" class="block mx-auto">
+
+              <p class="pt-4 text-sm font-medium capitalize font-body text-green-900 lg:text-lg md:text-base md:pt-6">
+                portfolio
               </p>
             </div>
-          </div>
-      
-          <!-- Center Section: Two Images Side by Side -->
-          <div class="flex flex-col md:flex-row gap-8">
-            <!-- Strategic Partner -->
-            <div class="flex flex-col items-center">
-              <h3 class="text-lg font-semibold">Strategic Partner</h3>
-              <img
-                src="https://via.placeholder.com/160x90?text=Partner+Logo"
-                alt="Strategic Partner"
-                class="w-40 h-auto mt-4"
-              />
+          </a>
+
+          <a href="#" class="block w-1/2 py-10 text-center border lg:w-1/4">
+            <div>
+              <img src="https://redpixelthemes.com/assets/images/icon-blog-green.svg" class="block mx-auto">
+
+              <p class="pt-4 text-sm font-medium capitalize font-body text-green-900 lg:text-lg md:text-base md:pt-6">
+                blog
+              </p>
             </div>
-      
-            <!-- Scan QR Code -->
-            <div class="flex flex-col items-center">
-              <h3 class="text-lg font-semibold">Scan QR Code</h3>
-              <img
-                src="https://via.placeholder.com/160x160?text=QR+Code"
-                alt="Scan QR Code"
-                class="w-40 h-auto mt-4"
-              />
+          </a>
+
+          <a href="#" class="block w-1/2 py-10 text-center border lg:w-1/4">
+            <div>
+              <img src="https://redpixelthemes.com/assets/images/icon-ecommerce-green.svg" class="block mx-auto">
+
+              <p class="pt-4 text-sm font-medium capitalize font-body text-green-900 lg:text-lg md:text-base md:pt-6">
+                ecommerce
+              </p>
             </div>
-          </div>
-      
-          <!-- Right Subscription Box (Input Removed) -->
-          <div>
-            <button class="bg-[#e5b56d] text-black font-semibold rounded-lg py-3 px-4 hover:bg-lime-400">
-              Download Brochure
-            </button>
-          </div>
-          
-      
+          </a>
+
+          <a href="#" class="block w-1/2 py-10 text-center border lg:w-1/4">
+            <div>
+              <img src="https://redpixelthemes.com/assets/images/icon-startup-green.svg" class="block mx-auto">
+
+              <p class="pt-4 text-sm font-medium capitalize font-body text-green-900 lg:text-lg md:text-base md:pt-6">
+                startup
+              </p>
+            </div>
+          </a>
+
+          <a href="#" class="block w-1/2 py-10 text-center border lg:w-1/4">
+            <div>
+              <img src="https://redpixelthemes.com/assets/images/icon-business-green.svg" class="block mx-auto">
+
+              <p class="pt-4 text-sm font-medium capitalize font-body text-green-900 lg:text-lg md:text-base md:pt-6">
+                business
+              </p>
+            </div>
+          </a>
+
+          <a href="#" class="block w-1/2 py-10 text-center border lg:w-1/4">
+            <div>
+              <img src="https://redpixelthemes.com/assets/images/icon-lifestyle-green.svg" class="block mx-auto">
+
+              <p class="pt-4 text-sm font-medium capitalize font-body text-green-900 lg:text-lg md:text-base md:pt-6">
+                lifestyle
+              </p>
+            </div>
+          </a>
+
+          <a href="#" class="block w-1/2 py-10 text-center border lg:w-1/4">
+            <div>
+              <img src="https://redpixelthemes.com/assets/images/icon-landing-page-green.svg" class="block mx-auto">
+
+              <p class="pt-4 text-sm font-medium capitalize font-body text-green-900 lg:text-lg md:text-base md:pt-6">
+                landing pages
+              </p>
+            </div>
+          </a>
+
+          <a href="#" class="block w-1/2 py-10 text-center border lg:w-1/4">
+            <div>
+              <img src="https://redpixelthemes.com/assets/images/icon-health-green.svg" class="block mx-auto">
+
+              <p class="pt-4 text-sm font-medium capitalize font-body text-green-900 lg:text-lg md:text-base md:pt-6">
+                health
+              </p>
+            </div>
+          </a>
+
         </div>
-      
-        <!-- Divider Line -->
-        <hr class="border-gray-600 my-8" />
-      
-        <!-- Footer Bottom -->
-        <div class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-300 gap-2">
-          <p>© 2025 PANASIA All Rights Reserved.</p>
-          <a href="./privacy-policy.html" class="underline hover:text-white">Privacy Policy</a>
-          <p class="underline hover:text-white">Terms & Condition</a>
+
+      </div>
+    </section>
+
+
+    <footer
+      class="bg-[#1B1C24] text-white rounded-tl-[40px] rounded-tr-[40px] px-6 md:px-16 lg:px-24 pt-16 pb-8 max-w-full mx-auto">
+      <div class="flex flex-col md:flex-row md:justify-between gap-10">
+
+        <!-- Left Section: Logo Image -->
+        <div class="flex flex-col gap-6">
+          <img src="./assets/white logo.png" alt="Positivus Logo" class="w-48 h-16" />
+
+          <!-- Contact Info -->
+          <div class="flex flex-col gap-2 mt-4">
+            <span class="bg-[#e5b56d] text-black font-semibold px-2 py-1 rounded-md inline-block w-fit">
+              Contact us:
+            </span>
+            <p>Email: info@panaisa.com</p>
+            <p>Phone: 555-567-8901</p>
+            <p>
+              Address: 1234 Main St<br />
+              Moonstone City, Stardust State 12345
+            </p>
+          </div>
         </div>
-      </footer>
+
+        <!-- Center Section: Two Images Side by Side -->
+        <div class="flex flex-col md:flex-row gap-8">
+          <!-- Strategic Partner -->
+          <div class="flex flex-col items-center">
+            <h3 class="text-lg font-semibold">Strategic Partner</h3>
+            <img src="https://via.placeholder.com/160x90?text=Partner+Logo" alt="Strategic Partner"
+              class="w-40 h-auto mt-4" />
+          </div>
+
+          <!-- Scan QR Code -->
+          <div class="flex flex-col items-center">
+            <h3 class="text-lg font-semibold">Scan QR Code</h3>
+            <img src="https://via.placeholder.com/160x160?text=QR+Code" alt="Scan QR Code" class="w-40 h-auto mt-4" />
+          </div>
+        </div>
+
+        <!-- Right Subscription Box (Input Removed) -->
+        <div>
+          <button class="bg-[#e5b56d] text-black font-semibold rounded-lg py-3 px-4 hover:bg-lime-400">
+            Download Brochure
+          </button>
+        </div>
+
+
+      </div>
+
+      <!-- Divider Line -->
+      <hr class="border-gray-600 my-8" />
+
+      <!-- Footer Bottom -->
+      <div class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-300 gap-2">
+        <p>© 2025 PANASIA All Rights Reserved.</p>
+        <a href="./privacy-policy.html" class="underline hover:text-white">Privacy Policy</a>
+        <p class="underline hover:text-white">Terms & Condition</a>
+      </div>
+    </footer>
 </body>
 <script src="script.js"></script>
+
 </html>
