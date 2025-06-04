@@ -4,9 +4,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Plant Website</title>
+  <title>PANASIA</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#06402B',
+            'primary-hover': '#085c3f',
+          },
+          spacing: {
+            'xs': '0.5rem',
+            'sm': '1rem',
+            'md': '1.5rem',
+            'lg': '2rem',
+            'xl': '3rem',
+          },
+        }
+      }
+    }
+  </script>
 </head>
 
 <body class="bg-white text-black">
@@ -33,21 +54,22 @@
             <img src="./assets/final logoo.jpg" alt="Logo" class="h-12">
           </div>
 
-          <p class="text-xl text-gray-600 text-center">Get in Touch</p>
+          <p class="text-xl text-gray-600 text-center mb-6">Get in Touch</p>
 
-          <div class="mt-4">
+          <div class="space-y-4">
+            <div>
             <label class="block text-gray-700 text-sm font-bold mb-2">Full Name</label>
             <input type="text" placeholder="John Doe"
               class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full" />
           </div>
 
-          <div class="mt-4">
+            <div>
             <label class="block text-gray-700 text-sm font-bold mb-2">Email Address</label>
             <input type="email" placeholder="john@example.com"
               class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full" />
           </div>
 
-          <div class="mt-4">
+            <div>
             <label class="block text-gray-700 text-sm font-bold mb-2">Phone Number</label>
             <input type="tel" placeholder="+1 234 567 8901"
               class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full" />
@@ -55,8 +77,8 @@
 
           <div class="mt-6">
             <label class="inline-flex items-start space-x-2">
-              <input type="checkbox" class="mt-1 form-checkbox h-4 w-4 text-gray-700">
-              <span class="text-s text-gray-600 leading-snug">
+                <input type="checkbox" class="mt-1 form-checkbox h-4 w-4 text-primary">
+                <span class="text-sm text-gray-600 leading-snug">
                 I authorize Pan Asis and its representatives to Call, SMS, Email, or WhatsApp me about its products and
                 offers. This consent overrides any registration for DNC / NDNC.
               </span>
@@ -65,7 +87,8 @@
 
           <div class="mt-6">
             <button
-              class="bg-[#e5b56d] text-white font-bold py-2 px-4 w-full rounded-3xl hover:bg-[#e5b56d]">Submit</button>
+                class="bg-primary text-white font-bold py-2 px-4 w-full rounded-3xl hover:bg-primary-hover transition duration-300">Submit</button>
+            </div>
           </div>
         </div>
       </div>
@@ -74,7 +97,32 @@
 
 
 <section>
-  <div class="w-full h-screen bg-[url('./assets/RENDER004.jpg')] bg-center bg-cover bg-no-repeat relative">
+  <div class="w-full h-screen relative">
+    <!-- Carousel Container -->
+    <div class="carousel-container w-full h-full">
+      <div class="carousel-track w-full h-full">
+        <!-- Slide 1 -->
+        <div class="carousel-item active absolute inset-0 w-full h-full transition-opacity duration-500">
+          <img src="./assets/RENDER004.jpg" alt="Render 4" class="w-full h-full object-cover">
+        </div>
+        <!-- Slide 2 -->
+        <div class="carousel-item absolute inset-0 w-full h-full transition-opacity duration-500">
+          <img src="./assets/RENDER001.jpg" alt="Render 1" class="w-full h-full object-cover">
+        </div>
+        <!-- Slide 3 -->
+        <div class="carousel-item absolute inset-0 w-full h-full transition-opacity duration-500">
+          <img src="./assets/RENDER003.jpg" alt="Render 3" class="w-full h-full object-cover">
+        </div>
+      </div>
+
+      <!-- Carousel Navigation Dots -->
+      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 z-20">
+        <button class="w-4 h-4 rounded-full bg-white transition-all duration-300 scale-100" data-slide="0"></button>
+        <button class="w-4 h-4 rounded-full bg-white/50 transition-all duration-300 scale-90" data-slide="1"></button>
+        <button class="w-4 h-4 rounded-full bg-white/50 transition-all duration-300 scale-90" data-slide="2"></button>
+      </div>
+    </div>
+
     <!-- Navbar -->
     <nav x-data="{ isOpen: false }" class="absolute top-0 left-0 w-full z-50 bg-black/30 backdrop-blur-md shadow-lg border-b border-white/10">
       <!-- Main Navbar Content -->
@@ -88,17 +136,17 @@
   
           <!-- Desktop Navigation -->
           <div class="hidden md:flex items-center space-x-12">
-            <a href="#" class="text-white/70 hover:text-yellow-400 transition font-medium">Home</a>
-            <a href="#" class="text-white/70 hover:text-yellow-400 transition font-medium">About</a>
-            <a href="#" class="text-white/70 hover:text-yellow-400 transition font-medium">Gallery</a>
-            <a href="#" class="text-white/70 hover:text-yellow-400 transition font-medium">Location</a>
+            <a href="#" class="text-white/70 hover:text-primary transition font-medium">Home</a>
+            <a href="#about" class="text-white/70 hover:text-primary transition font-medium">About</a>
+            <a href="#gallery" class="text-white/70 hover:text-primary transition font-medium">Gallery</a>
+            <a href="#location" class="text-white/70 hover:text-primary transition font-medium">Location</a>
           </div>
   
           <!-- Right Side CTA -->
           <div class="hidden sm:flex">
             <button class="relative group">
-              <span class="absolute inset-0 bg-gradient-to-r from-yellow-400 to-yellow-300 rounded-lg blur opacity-20 group-hover:opacity-30 transition duration-300"></span>
-              <div class="relative px-6 py-2 bg-black/60 text-white rounded-lg border border-[#e5b56d] font-semibold hover:scale-105 transition">
+              <span class="absolute inset-0 bg-gradient-to-r from-primary to-primary-hover rounded-lg blur opacity-20 group-hover:opacity-30 transition duration-300"></span>
+              <div class="relative px-6 py-2 bg-black/60 text-white rounded-lg border border-primary font-semibold hover:scale-105 transition duration-300">
                 +91 123 456 7890
               </div>
             </button>
@@ -117,25 +165,21 @@
   
         <!-- Mobile Menu Dropdown -->
         <div x-show="isOpen" x-transition class="mt-4 md:hidden bg-black/40 backdrop-blur-md p-4 rounded-lg space-y-2">
-          <a href="#" class="block text-white/80 hover:text-yellow-400 transition">Home</a>
-          <a href="#" class="block text-white/80 hover:text-yellow-400 transition">About</a>
-          <a href="#" class="block text-white/80 hover:text-yellow-400 transition">Gallery</a>
-          <a href="#" class="block text-white/80 hover:text-yellow-400 transition">Location</a>
-          <button class="w-full mt-4 bg-[#e5b56d] text-black py-2 rounded-lg font-semibold hover:bg-[#e5b56d] transition">+91 123 456 7890</button>
+          <a href="#" class="block text-white/80 hover:text-primary transition">Home</a>
+          <a href="#about" class="block text-white/80 hover:text-primary transition">About</a>
+          <a href="#gallery" class="block text-white/80 hover:text-primary transition">Gallery</a>
+          <a href="#location" class="block text-white/80 hover:text-primary transition">Location</a>
+          <button class="w-full mt-4 bg-primary text-black py-2 rounded-lg font-semibold hover:bg-primary-hover transition">+91 123 456 7890</button>
         </div>
       </div>
     </nav>
-  
-    <!-- Alpine.js for mobile menu -->
-    <script src="//unpkg.com/alpinejs" defer></script>
   </div>
 </section>
 
-
-<section class="w-full bg-gray-50 py-20">
-  <div class="container mx-auto px-6 md:px-12 lg:px-20">
+<!-- New About Section 1 -->
+<section class="w-full bg-gray-50 py-20 px-4 lg:px-8" id="about">
+  <div class="w-full max-w-full mx-auto">
     <div class="flex flex-col md:flex-row items-center gap-16">
-      
       <!-- Image Section -->
       <div class="md:w-1/2 w-full">
         <div class="overflow-hidden rounded-3xl shadow-lg">
@@ -145,304 +189,317 @@
       </div>
 
       <!-- Text Section -->
-      <div class="md:w-1/2 w-full text-left">
+      <div class="md:w-1/2 w-full text-left md:text-left">
         <h2 class="text-4xl font-bold text-gray-800 mb-6 leading-snug">
-          Elevating Ideas Into Reality
+          Crafting Excellence in Every Detail
         </h2>
-        <p class="text-lg text-gray-600 mb-5 leading-relaxed">
-          At the heart of everything we do lies innovation, integrity, and a relentless pursuit of quality. We believe in building solutions that not only meet expectations but inspire trust and exceed them.
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos beatae suscipit velit eum, nostrum quos. Maxime harum adipisci delectus, numquam corporis quia dolor! Provident vel nobis maxime sequi sed ab? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos beatae suscipit velit eum, nostrum quos. Maxime harum adipisci delectus, numquam corporis quia dolor! Provident vel nobis maxime sequi sed ab?
+        <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+          Our commitment to excellence is reflected in every aspect of our developments. From the initial design to the final touches, we ensure that each element meets the highest standards of quality and craftsmanship.
         </p>
-        <a href="#"
-           class="inline-block mt-4 px-6 py-3 bg-[#e5b56d] text-white text-base font-medium rounded-lg shadow-md hover:bg-[#e5b56d] transition duration-300">
-          Download Brochure
-        </a>
+        <div class="flex items-center gap-4">
+          <div class="w-16 h-1 bg-primary"></div>
+          <span class="text-primary font-semibold hover:text-primary-hover transition cursor-pointer">Download Brochure</span>
+        </div>
       </div>
-
     </div>
   </div>
 </section>
 
-
-<section class="w-full bg-gray-50 py-20">
-  <div class="container mx-auto px-6 md:px-12 lg:px-20">
-    <div class="flex flex-col md:flex-row items-center gap-24 md:flex-row-reverse">
-      
+<!-- New About Section 2 -->
+<section class="w-full bg-white py-20 px-4 lg:px-8">
+  <div class="w-full max-w-full mx-auto">
+    <div class="flex flex-col md:flex-row items-center gap-16 md:flex-row-reverse">
       <!-- Image Section -->
       <div class="md:w-1/2 w-full">
         <div class="overflow-hidden rounded-3xl shadow-lg">
-          <img src="./assets/RENDER001.jpg" alt="About Us"
+          <img src="./assets/RENDER003.jpg" alt="About Us"
                class="w-full h-auto object-cover transform hover:scale-105 transition duration-500">
         </div>
       </div>
 
       <!-- Text Section -->
-      <div class="md:w-1/2 w-full text-left">
+      <div class="md:w-1/2 w-full text-left md:text-left">
         <h2 class="text-4xl font-bold text-gray-800 mb-6 leading-snug">
-          Driving Change Through Innovation
+          Building Sustainable Communities
         </h2>
-        <p class="text-lg text-gray-600 mb-5 leading-relaxed">
-          We are not just a team — we are creators, builders, and problem-solvers. Our mission is to turn vision into value with a focus on practical, scalable, and lasting outcomes.
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos beatae suscipit velit eum, nostrum quos. Maxime harum adipisci delectus, numquam corporis quia dolor! Provident vel nobis maxime sequi sed ab?Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia dolorum mollitia excepturi deleniti amet et. Debitis, repellendus ipsum minus blanditiis inventore, cum natus aliquid quo provident molestiae excepturi sapiente esse.
+        <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+          We believe in creating more than just buildings – we create sustainable communities that foster growth, connection, and well-being. Our developments are designed to enhance the quality of life for all residents.
         </p>
-        <a href="#"
-           class="inline-block mt-4 px-6 py-3 bg-[#e5b56d] text-white text-base font-medium rounded-lg shadow-md hover:bg-[#e5b56d] transition duration-300">
-          Download Brochure
-        </a>
+        <div class="flex items-center gap-4">
+          <div class="w-16 h-1 bg-primary"></div>
+          <span class="text-primary font-semibold hover:text-primary-hover transition cursor-pointer">Download Brochure</span>
+        </div>
       </div>
-
     </div>
   </div>
 </section>
 
-<section class="px-6  sm:px-8 md:px-10 flex flex-col md:flex-row gap-8 md:gap-3 xl:gap-5 py-20 justify-center bg-white dark:bg-white ">
-  <div
-    class="px-[35px] py-[50px] xl:px-[50px] xl:py-[60px] w-full md:w-1/2 xl:w-[535px] flex flex-col justify-between bg-[#e5b56d] rounded-[50px]">
-    <div>
-      <div class="w-80 text-white text-3xl sm:text-4xl font-bold ">Lorem</div>
-      <div class="mt-9 flex  justify-between ">
-        <div class="xl:w-[350px] text-white text-lg sm:text-xl font-normal  leading-loose">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente nihil repudiandae, id molestias pariatur cum ex laudantium inventore nesciunt accusamus incidunt excepturi ipsum neque cupiditate voluptas animi ducimus. Blanditiis, explicabo.</div>
-      </div>
-    </div>
-    <div class="mt-10  flex flex-row md:flex-col gap-5 items-center  xl:gap-0 xl:flex-row justify-between">
-      <figure class="sm:flex hidden  -space-x-10 lg:-space-x-0 xl:-space-x-10 md:-space-x-8">
-        <img class="w-20 h-20 mr-0[-40px] rounded-[100px]" src="https://iili.io/3YxKvta.png"><img class="w-20 h-20 mr-0[-40px] rounded-[100px]" src="https://iili.io/3YxKvta.png"><img class="w-20 h-20 mr-0[-40px] rounded-[100px]" src="https://iili.io/3YxKvta.png"><img class="w-20 h-20 mr-0[-40px] rounded-[100px]" src="https://iili.io/3YxKvta.png">
-      </figure>
-      <button class="px-6 py-3 sm:px-8 sm:py-5 w-full sm:w-auto  md:w-full xl:w-auto   rounded-[100px]  border border-white flex justify-center items-center gap-5  text-white text-xl sm:text-2xl font-medium ">Download Brochure<svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.89715 1.65427C4.89715 1.01678 5.41394 0.5 6.05142 0.5H15.8457C16.4832 0.5 17 1.01678 17 1.65427V11.4486C17 12.0861 16.4832 12.6028 15.8457 12.6028C15.2082 12.6028 14.6915 12.0861 14.6915 11.4486V4.44092L1.97046 17.1619C1.51969 17.6127 0.788848 17.6127 0.338078 17.1619C-0.112693 16.7112 -0.112693 15.9803 0.338078 15.5295L13.0591 2.80854H6.05142C5.41394 2.80854 4.89715 2.29176 4.89715 1.65427Z" fill="white"></path></svg></button>
+<!-- Services Section -->
+<section class="services w-full px-4 lg:px-8">
+  <div class="w-full max-w-full mx-auto">
+  <div class="services-header">
+    <span class="badge">Lorem Ipsum</span>
+  </div>
+
+  <div class="service-item">
+    <div class="service-number">01</div>
+    <div class="service-title">Lorem ipsum</div>
+    <div class="service-description">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
     </div>
   </div>
-  <div class="w-full md:w-1/2 ">
-    <div class="w-full md:max-w-[670px] px-[35px] py-[50px] xl:px-[50px] xl:py-[60px] bg-[#e5b56d] rounded-[50px]">
-      <h2 class="text-white text-3xl sm:text-4xl font-bold ">Lorem ipsum</h2>
-      <p class="mt-9 text-white text-lg  sm:text-xl font-normal  leading-loose">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non eius illum animi sit, recusandae eligendi alias ullam, repudiandae iste, ut blanditiis corrupti officia.</p>
+
+  <div class="service-item">
+    <div class="service-number">02</div>
+    <div class="service-title">Lorem ipsum</div>
+    <div class="service-description">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
     </div>
+  </div>
+
+  <div class="service-item">
+    <div class="service-number">03</div>
+    <div class="service-title">Lorem ipsum</div>
+    <div class="service-description">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Walkthrough Video Section -->
+<!--<section class="w-full bg-white py-6 md:py-12 px-4 lg:px-8" id="connect">-->
+<!--  <div class="w-full max-w-full mx-auto">-->
+    <!-- Video Section -->
+<!--    <div class="w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] rounded-[20px] overflow-hidden">-->
+<!--      <iframe class="w-full h-full rounded-[20px]"-->
+<!--        src="https://www.youtube.com/embed/S7IP1nzh36Q?autoplay=1&mute=1&loop=1&playlist=S7IP1nzh36Q"-->
+<!--        title="YouTube video player" frameborder="0"-->
+<!--        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"-->
+<!--        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+
+<!-- Location Section -->
+<section class="py-16 px-4 lg:px-8 bg-white w-full" id="location">
+  <div class="w-full max-w-full mx-auto mb-12">
+    <h2 class="text-4xl font-bold text-center px-4 lg:px-8">A Home With A Remarkable Appeal</h2>
+    <p class="mt-4 text-lg text-center max-w-3xl mx-auto">
+      Live at the heart of convenience with effortless access to key
+      locations for education, travel, and leisure.
+    </p>
+  </div>
+
+  <!-- Grid Layout -->
+  <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 w-full max-w-full mx-auto">
+    <!-- Location Category 1 -->
     <div
-      class="mt-8 md:mt-3 xl:mt-5 w-full md:max-w-[670px] px-[35px] py-[50px] xl:px-[50px] xl:py-[60px]  bg-[#dedee0] rounded-[50px]">
-      <h2 class=" text-[#1c1a1a] text-3xl sm:text-4xl font-bold ">Lorem Ispum</h2>
-      <p class="mt-9 text-[#1c1a1a] text-lg  sm:text-xl font-normal  leading-loose">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde velit in, cumque dolore soluta ipsam aut enim consequatur!</p>
+      class="p-8 bg-white rounded-xl shadow-lg border-l-4 border-[#06402B] transform transition duration-300 hover:scale-105"
+    >
+      <h3 class="text-xl font-semibold text-[#06402B] mb-3">
+        Education & Learning
+      </h3>
+      <p class="text-gray-700 text-base">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut nisi vitae elit rhoncus luctus.
+      </p>
+    </div>
+
+    <!-- Location Category 2 -->
+    <div
+      class="p-8 bg-white rounded-xl shadow-lg border-l-4 border-[#06402B] transform transition duration-300 hover:scale-105"
+    >
+      <h3 class="text-xl font-semibold text-[#06402B] mb-3">
+        Transit Access
+      </h3>
+      <p class="text-gray-700 text-base">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Vivamus vel porta mauris, vitae egestas odio.
+      </p>
+    </div>
+
+    <!-- Location Category 3 -->
+    <div
+      class="p-8 bg-white rounded-xl shadow-lg border-l-4 border-[#06402B] transform transition duration-300 hover:scale-105"
+    >
+      <h3 class="text-xl font-semibold text-[#06402B] mb-3">
+        Key Landmarks
+      </h3>
+      <p class="text-gray-700 text-base">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur consequat metus nec dui congue, ac cursus justo vulputate.
+      </p>
     </div>
   </div>
 </section>
 
-  <!-- Section 2: Plant Intro -->
-  <!-- <section">
-    <div class="flex flex-wrap">
-      <div class="w-full sm:w-8/12 mb-10">
-        <div class="container mx-auto h-full sm:p-10">
-          <nav class="flex px-4 justify-between items-center">
-            <div class="text-4xl font-bold">
-              Plant<span class="text-green-700">.</span>
-            </div>
-            <div>
-              <img src="https://image.flaticon.com/icons/svg/497/497348.svg" alt="" class="w-8">
-            </div>
-          </nav>
-          <header class="container px-4 lg:flex mt-10 items-center h-full lg:mt-0">
-            <div class="w-full">
-              <h1 class="text-4xl lg:text-6xl font-bold">Find your <span class="text-green-700">greeny</span> stuff for
-                your room</h1>
-              <div class="w-20 h-2 bg-green-700 my-4"></div>
-              <p class="text-xl mb-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae maiores neque
-                eaque ea odit placeat, tenetur illum distinctio nulla voluptatum a corrupti beatae tempora aperiam quia
-                id aliquam possimus aut.</p>
-              <button class="bg-green-500 text-white text-2xl font-medium px-4 py-2 rounded shadow">Learn More</button>
-            </div>
-          </header>
+<!-- Amenities Section -->
+<section class="template-section mb-12 w-full px-4 lg:px-8">
+  <div class="w-full max-w-full mx-auto">
+    <h1 class="benefits-title">
+      World-Class
+      <span class="gold2">Amenities</span>
+    </h1>
+    <p class="benefits-description">
+      A relaxing space for your family to enjoy a peaceful and healthy lifestyle.
+    </p>
+    <div class="container relative z-40 mx-auto mt-12">
+      <div class="flex flex-wrap justify-center mx-auto w-full">
+
+        <!-- Entrance Lobby -->
+        <div class="block w-1/2 py-10 text-center border lg:w-1/4">
+          <div>
+            <img src="https://www.svgrepo.com/show/532273/door-open-line.svg" alt="Entrance Lobby Icon" class="block mx-auto" style="width: 64px; height: 64px;">
+            <p class="pt-4 text-sm font-medium capitalize font-body text-green-900 lg:text-lg md:text-base md:pt-6">Entrance Lobby</p>
+          </div>
         </div>
+
+        <!-- Garden -->
+        <div class="block w-1/2 py-10 text-center border lg:w-1/4">
+          <div>
+            <img src="https://www.svgrepo.com/show/530430/plant-pot-line.svg" alt="Garden Icon" class="block mx-auto" style="width: 64px; height: 64px;">
+            <p class="pt-4 text-sm font-medium capitalize font-body text-green-900 lg:text-lg md:text-base md:pt-6">Garden</p>
+          </div>
+        </div>
+
+        <!-- Recreation -->
+        <div class="block w-1/2 py-10 text-center border lg:w-1/4">
+          <div>
+            <img src="https://www.svgrepo.com/show/532312/basketball-hoop-line.svg" alt="Recreation Icon" class="block mx-auto" style="width: 64px; height: 64px;">
+            <p class="pt-4 text-sm font-medium capitalize font-body text-green-900 lg:text-lg md:text-base md:pt-6">Recreation</p>
+          </div>
+        </div>
+
+        <!-- Power Backup -->
+        <div class="block w-1/2 py-10 text-center border lg:w-1/4">
+          <div>
+            <img src="https://www.svgrepo.com/show/532295/battery-charging-line.svg" alt="Power Backup Icon" class="block mx-auto" style="width: 64px; height: 64px;">
+            <p class="pt-4 text-sm font-medium capitalize font-body text-green-900 lg:text-lg md:text-base md:pt-6">Power Backup</p>
+          </div>
+        </div>
+
+        <!-- EV Charging -->
+        <div class="block w-1/2 py-10 text-center border lg:w-1/4">
+          <div>
+            <img src="https://www.svgrepo.com/show/532295/battery-charging-line.svg" alt="EV Charging Icon" class="block mx-auto" style="width: 64px; height: 64px;">
+            <p class="pt-4 text-sm font-medium capitalize font-body text-green-900 lg:text-lg md:text-base md:pt-6">EV Charging</p>
+          </div>
+        </div>
+
+        <!-- Elevators -->
+        <div class="block w-1/2 py-10 text-center border lg:w-1/4">
+          <div>
+            <img src="https://www.svgrepo.com/show/532274/elevator-line.svg" alt="Elevators Icon" class="block mx-auto" style="width: 64px; height: 64px;">
+            <p class="pt-4 text-sm font-medium capitalize font-body text-green-900 lg:text-lg md:text-base md:pt-6">Elevators</p>
+          </div>
+        </div>
+
+        <!-- Solar Power -->
+        <div class="block w-1/2 py-10 text-center border lg:w-1/4">
+          <div>
+            <img src="https://www.svgrepo.com/show/532275/solar-panel-line.svg" alt="Solar Power Icon" class="block mx-auto" style="width: 64px; height: 64px;">
+            <p class="pt-4 text-sm font-medium capitalize font-body text-green-900 lg:text-lg md:text-base md:pt-6">Solar Power</p>
+          </div>
+        </div>
+
+        <!-- Play Area -->
+        <div class="block w-1/2 py-10 text-center border lg:w-1/4">
+          <div>
+            <img src="https://www.svgrepo.com/show/532313/swing-line.svg" alt="Play Area Icon" class="block mx-auto" style="width: 64px; height: 64px;">
+            <p class="pt-4 text-sm font-medium capitalize font-body text-green-900 lg:text-lg md:text-base md:pt-6">Play Area</p>
+          </div>
+        </div>
+
       </div>
-      <img
-        src="https://images.unsplash.com/photo-1536147116438-62679a5e01f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
-        alt="Leafs" class="w-full h-48 object-cover sm:h-screen sm:w-4/12">
     </div>
-  </section> -->
+  </div>
+</section>
 
+<!-- proximity-areas -->
+<section class="w-full px-4 lg:px-8">
+  <div class="w-full max-w-full mx-auto">
+    <h1 class="benefits-title">
+      Seamless Proximity to
+      <span class="gold2">Business & Lifestyle</span> Centers
+    </h1>
+    <p class="benefits-description">
+      Discover the convenience of being close to essential amenities and
+      prime locations.
+    </p>
 
-
-
-    <!-- Section 4 : Numbers Section -->
-    <section>
-      <section class="flex flex-col mt-20">
-        <div
-          class="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-y-5 lg:gap-y-0 gap-x-5 place-items-center w-full mx-auto max-w-7xl px-5">
-          <div
-            class="flex flex-col justify-center items-center bg-[#FFF6F3] px-4 h-[126px] w-[100%] md:w-[281px] md:h-[192px] rounded-lg justify-self-center">
-            <div class="flex flex-row justify-center items-center">
-              <svg class="w-[35px] h-[35px] md:w-[50px] md:h-[50px]" viewBox="0 0 50 50" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M39.37 18.432c0 3.058-.906 5.862-2.466 8.203a14.728 14.728 0 0 1-10.079 6.367c-.717.127-1.455.19-2.214.19-.759 0-1.497-.063-2.214-.19a14.728 14.728 0 0 1-10.078-6.368 14.692 14.692 0 0 1-2.467-8.202c0-8.16 6.6-14.76 14.76-14.76s14.759 6.6 14.759 14.76Z"
-                  stroke="#FF6D42" stroke-width="3.473" stroke-linecap="round" stroke-linejoin="round"></path>
-                <path
-                  d="m44.712 38.17-3.431.83a2.063 2.063 0 0 0-1.539 1.572l-.728 3.122c-.09.384-.281.734-.554 1.012a2.068 2.068 0 0 1-.992.564c-.375.09-.768.073-1.134-.052a2.078 2.078 0 0 1-.938-.653l-9.92-11.64-9.92 11.661a2.078 2.078 0 0 1-.938.653 2.038 2.038 0 0 1-1.134.052 2.067 2.067 0 0 1-.992-.563 2.137 2.137 0 0 1-.554-1.012l-.728-3.123a2.13 2.13 0 0 0-.55-1.01 2.06 2.06 0 0 0-.988-.562L6.24 38.19a2.073 2.073 0 0 1-.956-.533 2.14 2.14 0 0 1-.563-.953 2.175 2.175 0 0 1-.015-1.113c.091-.366.276-.7.536-.97l8.11-8.284a14.672 14.672 0 0 0 4.307 4.281 14.34 14.34 0 0 0 5.634 2.134 12.29 12.29 0 0 0 2.183.191c.749 0 1.477-.063 2.184-.19 4.138-.617 7.694-3.017 9.94-6.416l8.11 8.285c1.144 1.147.583 3.165-.998 3.547Zm-18.03-26.532 1.227 2.507c.167.34.603.68.998.743l2.226.383c1.414.233 1.747 1.296.727 2.336l-1.726 1.764c-.29.297-.457.87-.353 1.295l.499 2.188c.395 1.721-.5 2.4-1.996 1.487l-2.08-1.253a1.434 1.434 0 0 0-1.372 0l-2.08 1.253c-1.497.892-2.392.234-1.996-1.487l.499-2.188c.083-.403-.063-.998-.354-1.295l-1.726-1.764c-1.019-1.04-.686-2.081.728-2.336l2.225-.383c.375-.063.811-.403.977-.743l1.227-2.507c.604-1.36 1.685-1.36 2.35 0Z"
-                  stroke="#FF6D42" stroke-width="3.473" stroke-linecap="round" stroke-linejoin="round"></path>
-              </svg>
-              <p class="font-bold text-3xl sm:text-4xl lg:text-5xl leading-9 text-primary ml-2">75K+</p>
-            </div>
-            <p class="font-medium text-base sm:text-lg leading-6 mt-3 md:mt-6 text-center">Expert Chat &amp; Call
-              Minutes</p>
-          </div>
-          <div
-            class="flex flex-col justify-center items-center bg-[#FFF6F3] px-4 h-[126px] w-[100%] md:w-[281px] md:h-[192px] rounded-lg justify-self-center">
-            <div class="flex flex-row justify-center items-center">
-              <svg class="w-[35px] h-[35px] md:w-[50px] md:h-[50px]" viewBox="0 0 51 50" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#a)">
-                  <path
-                    d="m26.91 5.776 4.483 10.683a1.544 1.544 0 0 0 1.287.942l11.474.992a1.544 1.544 0 0 1 .876 2.715L36.325 28.7a1.559 1.559 0 0 0-.49 1.523l2.61 11.296a1.544 1.544 0 0 1-2.295 1.677l-9.86-5.982a1.53 1.53 0 0 0-1.59 0l-9.861 5.982a1.544 1.544 0 0 1-2.295-1.677l2.609-11.296a1.56 1.56 0 0 0-.49-1.523l-8.705-7.593a1.544 1.544 0 0 1 .876-2.715l11.474-.992a1.544 1.544 0 0 0 1.287-.942l4.483-10.683a1.544 1.544 0 0 1 2.833 0Z"
-                    stroke="#FF6D42" stroke-width="4.341" stroke-linecap="round" stroke-linejoin="round"></path>
-                </g>
-                <defs>
-                  <clipPath id="a">
-                    <path fill="#fff" d="M.8.2h49.4v49.4H.8z"></path>
-                  </clipPath>
-                </defs>
-              </svg>
-              <p class="font-bold text-3xl sm:text-4xl lg:text-5xl leading-9 text-primary ml-2">4.9</p>
-            </div>
-            <p class="font-medium text-base sm:text-lg leading-6 mt-3 md:mt-6 text-center">Average Expert Rating</p>
-          </div>
-          <div
-            class="flex flex-col justify-center items-center bg-[#FFF6F3] px-4 h-[126px] w-[100%] md:w-[281px] md:h-[192px] rounded-lg justify-self-center">
-            <div class="flex flex-row justify-center items-center">
-              <svg class="w-[35px] h-[35px] md:w-[50px] md:h-[50px]" viewBox="0 0 50 50" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#a)" stroke="#FF6D42" stroke-width="3.473" stroke-linecap="round"
-                  stroke-linejoin="round">
-                  <path
-                    d="M10.811 39.091c-1.775-1.775-.598-5.505-1.5-7.69-.939-2.255-4.377-4.089-4.377-6.5 0-2.413 3.438-4.246 4.376-6.502.903-2.182-.274-5.914 1.501-7.69 1.776-1.775 5.508-.598 7.69-1.5 2.266-.939 4.09-4.377 6.501-4.377 2.412 0 4.246 3.438 6.501 4.376 2.185.903 5.915-.274 7.69 1.501 1.776 1.776.598 5.506 1.502 7.69.937 2.266 4.376 4.09 4.376 6.501 0 2.412-3.439 4.246-4.377 6.501-.903 2.185.274 5.915-1.5 7.69-1.776 1.776-5.506.598-7.69 1.501-2.256.938-4.09 4.377-6.502 4.377s-4.245-3.439-6.5-4.377c-2.183-.903-5.915.275-7.69-1.5Z">
-                  </path>
-                  <path d="m17.281 26.444 4.632 4.631L32.718 20.27"></path>
-                </g>
-                <defs>
-                  <clipPath id="a">
-                    <path fill="#fff" d="M.3.2h49.4v49.4H.3z"></path>
-                  </clipPath>
-                </defs>
-              </svg>
-              <p class="font-bold text-3xl sm:text-4xl lg:text-5xl leading-9 text-primary ml-2">8900+</p>
-            </div>
-            <p class="font-medium text-base sm:text-lg leading-6 mt-3 md:mt-6 text-center">Sessions Completed</p>
-          </div>
-          <div
-            class="flex flex-col justify-center items-center bg-[#FFF6F3] px-4 h-[126px] w-[100%] md:w-[281px] md:h-[192px] rounded-lg justify-self-center">
-            <div class="flex flex-row justify-center items-center">
-              <svg class="w-[35px] h-[35px] md:w-[50px] md:h-[50px]" viewBox="0 0 51 50" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path d="M45.571 12.006 27.046 30.531l-7.719-7.718L5.434 36.706" stroke="#FF6D42" stroke-width="4.341"
-                  stroke-linecap="round" stroke-linejoin="round"></path>
-                <path d="M45.569 24.356v-12.35h-12.35" stroke="#FF6D42" stroke-width="4.341" stroke-linecap="round"
-                  stroke-linejoin="round"></path>
-              </svg>
-              <p class="font-bold text-3xl sm:text-4xl lg:text-5xl leading-9 text-primary ml-2">1.5M+</p>
-            </div>
-            <p class="font-medium text-base sm:text-lg leading-6 mt-3 md:mt-6 text-center">App Downloads</p>
-          </div>
+    <div class="proximity-container w-full max-w-full mx-auto">
+      <div class="proximity-section hospitals-section">
+        <h2 class="proximity-head">Schools & Colleges</h2>
+        <div class="proximity-item">
+          <span>Mount Dale School</span><span>1 KM</span>
         </div>
-      </section>
-    </section>
-
-    <!-- Section 5: Amenities -->
-    <section>
-      <div class="container relative z-40 mx-auto mt-12">
-
-        <div class="flex justify-center items-center text-5xl py-4">
-          <h1>Amenities</h1>
+        <div class="proximity-item">
+          <span>Mount Castele School</span><span>3 KM</span>
         </div>
-
-        <div class="flex flex-wrap justify-center mx-auto lg:w-full md:w-5/6 xl:shadow-small-blue">
-
-          <a href="#" class="block w-1/2 py-10 text-center border lg:w-1/4">
-            <div>
-              <img src="https://redpixelthemes.com/assets/images/icon-portfolio-green.svg" class="block mx-auto">
-
-              <p class="pt-4 text-sm font-medium capitalize font-body text-green-900 lg:text-lg md:text-base md:pt-6">
-                portfolio
-              </p>
-            </div>
-          </a>
-
-          <a href="#" class="block w-1/2 py-10 text-center border lg:w-1/4">
-            <div>
-              <img src="https://redpixelthemes.com/assets/images/icon-blog-green.svg" class="block mx-auto">
-
-              <p class="pt-4 text-sm font-medium capitalize font-body text-green-900 lg:text-lg md:text-base md:pt-6">
-                blog
-              </p>
-            </div>
-          </a>
-
-          <a href="#" class="block w-1/2 py-10 text-center border lg:w-1/4">
-            <div>
-              <img src="https://redpixelthemes.com/assets/images/icon-ecommerce-green.svg" class="block mx-auto">
-
-              <p class="pt-4 text-sm font-medium capitalize font-body text-green-900 lg:text-lg md:text-base md:pt-6">
-                ecommerce
-              </p>
-            </div>
-          </a>
-
-          <a href="#" class="block w-1/2 py-10 text-center border lg:w-1/4">
-            <div>
-              <img src="https://redpixelthemes.com/assets/images/icon-startup-green.svg" class="block mx-auto">
-
-              <p class="pt-4 text-sm font-medium capitalize font-body text-green-900 lg:text-lg md:text-base md:pt-6">
-                startup
-              </p>
-            </div>
-          </a>
-
-          <a href="#" class="block w-1/2 py-10 text-center border lg:w-1/4">
-            <div>
-              <img src="https://redpixelthemes.com/assets/images/icon-business-green.svg" class="block mx-auto">
-
-              <p class="pt-4 text-sm font-medium capitalize font-body text-green-900 lg:text-lg md:text-base md:pt-6">
-                business
-              </p>
-            </div>
-          </a>
-
-          <a href="#" class="block w-1/2 py-10 text-center border lg:w-1/4">
-            <div>
-              <img src="https://redpixelthemes.com/assets/images/icon-lifestyle-green.svg" class="block mx-auto">
-
-              <p class="pt-4 text-sm font-medium capitalize font-body text-green-900 lg:text-lg md:text-base md:pt-6">
-                lifestyle
-              </p>
-            </div>
-          </a>
-
-          <a href="#" class="block w-1/2 py-10 text-center border lg:w-1/4">
-            <div>
-              <img src="https://redpixelthemes.com/assets/images/icon-landing-page-green.svg" class="block mx-auto">
-
-              <p class="pt-4 text-sm font-medium capitalize font-body text-green-900 lg:text-lg md:text-base md:pt-6">
-                landing pages
-              </p>
-            </div>
-          </a>
-
-          <a href="#" class="block w-1/2 py-10 text-center border lg:w-1/4">
-            <div>
-              <img src="https://redpixelthemes.com/assets/images/icon-health-green.svg" class="block mx-auto">
-
-              <p class="pt-4 text-sm font-medium capitalize font-body text-green-900 lg:text-lg md:text-base md:pt-6">
-                health
-              </p>
-            </div>
-          </a>
-
+        <div class="proximity-item">
+          <span>IIMS College of Institutes</span><span>4 KM</span>
         </div>
-
+        <div class="proximity-item">
+          <span>Symbiosis College,Kiwale</span><span>8 KM</span>
+        </div>
       </div>
-    </section>
 
-    <section>
-    <div class="bg-white">
-      <div class="container mx-auto px-4 py-8">
+      <div class="proximity-section education-section">
+        <h2 class="proximity-head">Infrastructure</h2>
+        <div class="proximity-item">
+          <span>Hinjawadi IT Park</span><span>6 KM</span>
+        </div>
+        <div class="proximity-item">
+          <span>Mumbai-Pune Expressway</span><span>5 KM</span>
+        </div>
+        <div class="proximity-item">
+          <span>Bhumkar Chowk</span><span>6 KM</span>
+        </div>
+        <div class="proximity-item">
+          <span>Ring Road</span><span>4 KM</span>
+        </div>
+      </div>
+
+      <div class="proximity-section hotels-section">
+        <h2 class="proximity-head">Malls & Hotels</h2>
+        <div class="proximity-item">
+          <span>Sneh Resort</span><span>2 KM</span>
+        </div>
+        <div class="proximity-item">
+          <span>Sayaji Hotel</span><span>8 KM</span>
+        </div>
+        <div class="proximity-item">
+          <span>Westside Mall</span><span>6 KM</span>
+        </div>
+        <div class="proximity-item">
+          <span>Millennium Mall</span><span>8 KM</span>
+        </div>
+      </div>
+
+      <div class="proximity-section connectivity-section">
+        <h2 class="proximity-head">View Points</h2>
+        <div class="proximity-item">
+          <span>Kasarsai Dam </span><span>2 KM</span>
+        </div>
+        <div class="proximity-item">
+          <span>Shirgaon. Saibaba Temple</span><span>4 KM</span>
+        </div>
+        <div class="proximity-item">
+          <span>Big Ganesha Murti, Somatane</span><span>7 KM</span>
+        </div>
+        <div class="proximity-item">
+          <span>Pawana Dam</span><span>20 KM</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery Section -->
+<section class="w-full bg-white px-4 lg:px-8" id="gallery">
+  <div class="w-full max-w-full mx-auto py-8">
         <div class="flex justify-center items-center text-5xl py-8">
           <h1>Gallery</h1>
         </div>
-          <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 w-full">
               <!-- Large item -->
               <div class="md:col-span-2 md:row-span-2 relative overflow-hidden rounded-2xl shadow-lg group">
                   <img src="./assets/RENDER004.jpg" alt="Nature" class="w-full h-full object-cover">
@@ -529,14 +586,12 @@
                       class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <div class="absolute bottom-0 left-0 right-0 p-4">
                           <h4 class="text-xl font-bold text-white">Cricket</h4>
-                      </div>
                   </div>
               </div>
           </div>
       </div>
   </div>
 </section>
-
 
     <footer
       class="bg-[#1B1C24] text-white rounded-tl-[40px] rounded-tr-[40px] px-6 md:px-16 lg:px-24 pt-16 pb-8 max-w-full mx-auto">
@@ -552,10 +607,10 @@
               Contact us:
             </span>
             <p>Email: info@panaisa.com</p>
-            <p>Phone: 555-567-8901</p>
+            <p>Phone: 123-456-7890</p>
             <p>
               Address: 1234 Main St<br />
-              Moonstone City, Stardust State 12345
+              Pune City, Maharashtra 411001
             </p>
           </div>
         </div>
