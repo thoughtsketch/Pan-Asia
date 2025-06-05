@@ -66,3 +66,30 @@ window.onload = function () {
     startAutoPlay();
   }
 })();
+
+// Function to open the modal
+function openModal() {
+    document.getElementById('contactModal').style.display = 'flex';
+    document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+}
+
+// Function to close the modal
+function closeModal() {
+    document.getElementById('contactModal').style.display = 'none';
+    document.body.style.overflow = 'auto'; // Re-enable scrolling when modal is closed
+}
+
+// Close modal when clicking outside of it
+window.onclick = function(event) {
+    const modal = document.getElementById('contactModal');
+    if (event.target === modal) {
+        closeModal();
+    }
+}
+
+// Close modal when pressing Escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeModal();
+    }
+});
