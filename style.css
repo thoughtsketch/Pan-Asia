@@ -1,8 +1,8 @@
 /* Root variables for consistent styling */
 :root {
   /* Colors */
-  --primary-color: #06402B;
-  --primary-hover: #085c3f;
+  --primary-color: #cf6f35;
+  --primary-hover: #b85d2a;
   --text-dark: #333333;
   --text-medium: #666666;
   --text-light: #999999;
@@ -424,4 +424,35 @@ h2 {
 
 .btn:active {
   transform: translateY(0);
+}
+
+/* Update any color references to use the new primary color */
+.text-primary {
+    color: #cf6f35;
+}
+
+.bg-primary {
+    background-color: #cf6f35;
+}
+
+.border-primary {
+    border-color: #cf6f35;
+}
+
+.hover\:bg-primary-hover:hover {
+    background-color: #b85d2a;
+}
+
+.hover\:text-primary-hover:hover {
+    color: #b85d2a;
+}
+
+/* Update any other color references */
+.gold2 {
+    color: #cf6f35;
+}
+
+/* Update any other specific color references */
+.text-green-900 {
+    color: #cf6f35;
 }
