@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Codename North Hinjewadi</title>
+  <link rel="icon" href="./assets/CODENAME North Hinjewadi-01.png" type="image/x-icon">
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -64,6 +65,29 @@
       font-family: 'Poppins', sans-serif;
       font-weight: 400;
     }
+
+    /* Gallery Scroll Styles */
+    .hide-scrollbar {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;  /* Chrome, Safari and Opera */
+    }
+
+    /* Smooth scrolling for gallery */
+    .snap-x {
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    /* Gallery item hover effect */
+    .gallery-item {
+      transition: transform 0.3s ease;
+    }
+    .gallery-item:hover {
+      transform: scale(1.02);
+    }
   </style>
 </head>
 
@@ -93,63 +117,120 @@
 
           <p class="text-xl text-gray-600 text-center mb-6">Get in Touch</p>
 
-          <div class="space-y-4">
+          <form id="contactForm" class="space-y-4">
             <div>
               <label class="block text-gray-700 text-sm font-bold mb-2">Full Name</label>
-              <input type="text" placeholder="John Doe"
+              <input type="text" id="name" placeholder="John Doe"
                 class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full" />
             </div>
 
             <div>
               <label class="block text-gray-700 text-sm font-bold mb-2">Email Address</label>
-              <input type="email" placeholder="john@example.com"
+              <input type="email" id="email" placeholder="john@example.com"
                 class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full" />
             </div>
 
             <div>
               <label class="block text-gray-700 text-sm font-bold mb-2">Phone Number</label>
-              <input type="tel" placeholder="+1 234 567 8901"
-                class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full" />
+              <div class="relative">
+                <span class="absolute left-4 top-2 text-gray-700">+91</span>
+                <input type="tel" id="mobile" placeholder="9876543210" maxlength="10"
+                  class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 pl-12 pr-4 block w-full" />
+              </div>
             </div>
 
             <div class="mt-6">
               <label class="inline-flex items-start space-x-2">
-                <input type="checkbox" class="mt-1 form-checkbox h-4 w-4 text-primary">
+                <input type="checkbox" id="termsCheckbox" class="mt-1 form-checkbox h-4 w-4 text-primary">
                 <span class="text-sm text-gray-600 leading-snug">
                   I authorize Pan Asis and its representatives to Call, SMS, Email, or WhatsApp me about its products
-                  and
-                  offers. This consent overrides any registration for DNC / NDNC.
+                  and offers. This consent overrides any registration for DNC / NDNC.
                 </span>
               </label>
             </div>
 
             <div class="mt-6">
-              <button
+              <button type="submit"
                 class="bg-primary text-white font-bold py-2 px-4 w-full rounded-3xl hover:bg-primary-hover transition duration-300">Submit</button>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- Navbar -->
+  <nav x-data="{ isOpen: false }"
+    class="w-full z-50 bg-black/90 backdrop-blur-md shadow-lg border-b border-white/10">
+    <!-- Main Navbar Content -->
+    <div class="relative px-6 sm:px-12 py-5">
+      <div class="flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex items-center space-x-3 group">
+          <img src="./assets/CODENAME North Hinjewadi-01.png" alt="EstatePrime Logo" class="h-14 w-auto">
+        </div>
 
-  <section>
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center space-x-12">
+          <a href="#" class="text-white/70 hover:text-primary transition font-medium">Home</a>
+          <a href="#about" class="text-white/70 hover:text-primary transition font-medium">About</a>
+          <a href="#gallery" class="text-white/70 hover:text-primary transition font-medium">Gallery</a>
+          <a href="https://maps.app.goo.gl/Kd1KPZjwDNpRgdNb7" target="_blank" rel="noopener noreferrer" 
+            class="text-white/70 hover:text-primary transition font-medium">
+            Location
+          </a>
+        </div>
+
+        <!-- Right Side CTA -->
+        <div class="hidden sm:flex">
+          <a href="tel:+911234567890" class="relative group">
+            <span class="absolute inset-0 bg-gradient-to-r from-primary to-primary-hover rounded-lg blur opacity-20 group-hover:opacity-30 transition duration-300"></span>
+            <div class="relative px-6 py-2 bg-black/60 text-white rounded-lg border border-primary font-semibold hover:scale-105 transition duration-300">
+              +91 7410106638
+            </div>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button @click="isOpen = !isOpen" class="md:hidden text-white" aria-label="Toggle mobile menu">
+          <svg x-show="!isOpen" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg x-show="isOpen" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Menu Dropdown -->
+      <div x-show="isOpen" x-transition
+        class="mt-4 md:hidden bg-black/40 backdrop-blur-md p-4 rounded-lg space-y-2">
+        <a href="#" class="block text-white/80 hover:text-primary transition">Home</a>
+        <a href="#about" class="block text-white/80 hover:text-primary transition">About</a>
+        <a href="#gallery" class="block text-white/80 hover:text-primary transition">Gallery</a>
+        <a href="https://maps.app.goo.gl/Kd1KPZjwDNpRgdNb7" target="_blank" rel="noopener noreferrer" 
+          class="text-white/70 hover:text-primary transition font-medium">
+          Location
+        </a>
+        <button class="w-full mt-4 bg-primary text-black py-2 rounded-lg font-semibold hover:bg-primary-hover transition">
+          +91 7410106638
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero-section">
     <div class="w-full h-screen relative">
       <!-- Carousel Container -->
       <div class="carousel-container w-full h-full">
         <div class="carousel-track w-full h-full">
           <!-- Slide 1 -->
           <div class="carousel-item active absolute inset-0 w-full h-full transition-opacity duration-500">
-            <img src="./assets/RENDER 004.jpg" alt="Render 4" class="w-full h-full object-cover">
+            <img src="./assets/Banner_1920x1080_DesktopBanner render.jpg" alt="Render 4" class="w-full h-full object-contain">
           </div>
           <!-- Slide 2 -->
           <div class="carousel-item absolute inset-0 w-full h-full transition-opacity duration-500">
-            <img src="./assets/RENDER 001 (1).jpg" alt="Render 1" class="w-full h-full object-cover">
-          </div>
-          <!-- Slide 3 -->
-          <div class="carousel-item absolute inset-0 w-full h-full transition-opacity duration-500">
-            <img src="./assets/RENDER 002.jpg" alt="Render 3" class="w-full h-full object-cover">
+            <img src="./assets/Banner_1920x1080_DesktopBanner.jpg" alt="Render 1" class="w-full h-full object-contain">
           </div>
         </div>
 
@@ -157,84 +238,8 @@
         <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 z-20">
           <button class="w-4 h-4 rounded-full bg-white transition-all duration-300 scale-100" data-slide="0"></button>
           <button class="w-4 h-4 rounded-full bg-white/50 transition-all duration-300 scale-90" data-slide="1"></button>
-          <button class="w-4 h-4 rounded-full bg-white/50 transition-all duration-300 scale-90" data-slide="2"></button>
         </div>
       </div>
-
-      <!-- Navbar -->
-      <nav x-data="{ isOpen: false }"
-        class="absolute top-0 left-0 w-full z-50 bg-black/30 backdrop-blur-md shadow-lg border-b border-white/10">
-        <!-- Main Navbar Content -->
-        <div class="relative px-6 sm:px-12 py-5">
-          <div class="flex items-center justify-between">
-            <!-- Logo -->
-            <div class="flex items-center space-x-3 group">
-              <img src="./assets/CODENAME North Hinjewadi-01.png" alt="EstatePrime Logo" class="h-14 w-auto">
-            </div>
-
-
-            <!-- Desktop Navigation -->
-            <div class="hidden md:flex items-center space-x-12">
-              <a href="#" class="text-white/70 hover:text-primary transition font-medium">Home</a>
-              <a href="#about" class="text-white/70 hover:text-primary transition font-medium">About</a>
-              <a href="#gallery" class="text-white/70 hover:text-primary transition font-medium">Gallery</a>
-             <a 
-  href="https://maps.app.goo.gl/Kd1KPZjwDNpRgdNb7" 
-  target="_blank" 
-  rel="noopener noreferrer" 
-  class="text-white/70 hover:text-primary transition font-medium"
->
-  Location
-</a>
-
-            </div>
-
-            <!-- Right Side CTA -->
-<div class="hidden sm:flex">
-  <a href="tel:+911234567890" class="relative group">
-    <span
-      class="absolute inset-0 bg-gradient-to-r from-primary to-primary-hover rounded-lg blur opacity-20 group-hover:opacity-30 transition duration-300">
-    </span>
-    <div
-      class="relative px-6 py-2 bg-black/60 text-white rounded-lg border border-primary font-semibold hover:scale-105 transition duration-300">
-      +91 123 456 7890
-    </div>
-  </a>
-</div>
-
-
-            <!-- Mobile Menu Button -->
-            <button @click="isOpen = !isOpen" class="md:hidden text-white" aria-label="Toggle mobile menu">
-              <svg x-show="!isOpen" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-              <svg x-show="isOpen" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
-
-          <!-- Mobile Menu Dropdown -->
-          <div x-show="isOpen" x-transition
-            class="mt-4 md:hidden bg-black/40 backdrop-blur-md p-4 rounded-lg space-y-2">
-            <a href="#" class="block text-white/80 hover:text-primary transition">Home</a>
-            <a href="#about" class="block text-white/80 hover:text-primary transition">About</a>
-            <a href="#gallery" class="block text-white/80 hover:text-primary transition">Gallery</a>
-           <a 
-  href="https://maps.app.goo.gl/Kd1KPZjwDNpRgdNb7" 
-  target="_blank" 
-  rel="noopener noreferrer" 
-  class="text-white/70 hover:text-primary transition font-medium"
->
-  Location
-</a>
-
-            <button
-              class="w-full mt-4 bg-primary text-black py-2 rounded-lg font-semibold hover:bg-primary-hover transition">+91
-              123 456 7890</button>
-          </div>
-        </div>
-      </nav>
     </div>
   </section>
 
@@ -371,8 +376,8 @@
   <!-- Location Section -->
   <section class="py-16 px-4 lg:px-8 bg-white w-full" id="location">
     <div class="w-full max-w-full mx-auto mb-12">
-      <h2 class="text-4xl font-bold text-center px-4 lg:px-8">A Home With A Remarkable Appeal</h2>
-      <p class="mt-4 text-lg w-[30%] text-center max-w-3xl mx-auto">
+      <h2 class="text-4xl font-bold text-center px-4 lg:px-8 md:text-left">A Home With A Remarkable Appeal</h2>
+      <p class="mt-4 text-lg w-full text-center max-w-3xl mx-auto md:text-left">
         Live at the heart of convenience with effortless access to key
         locations for education, travel, and leisure.
       </p>
@@ -644,107 +649,46 @@
       <div class="flex justify-center items-center text-5xl py-8">
         <h1 class="text-[#cf6f35]">Gallery</h1>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-4 w-full">
-        <!-- Large item -->
-        <div class="md:col-span-2 md:row-span-2 relative overflow-hidden rounded-2xl shadow-lg group">
-          <img src="./assets/RENDER 001 (1).jpg" alt="Nature" class="w-full h-full object-cover">
-          <div
-            class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div class="absolute bottom-0 left-0 right-0 p-4">
-              <h3 class="text-2xl font-bold text-white">Explore Nature</h3>
-              <p class="text-white">Discover the beauty of the natural world</p>
-            </div>
-          </div>
-        </div>
+      <div class="relative">
+        <!-- Scroll Buttons -->
+        <button onclick="scrollGallery('left')" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-300">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        <button onclick="scrollGallery('right')" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-300">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
 
-        <!-- Two small items -->
-        <div class="relative overflow-hidden rounded-2xl shadow-lg group">
-  <img src="./assets/RENDER 005.jpg" alt="Technology" class="w-full h-48 object-cover">
-          <div
-            class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div class="absolute bottom-0 left-0 right-0 p-4">
-              <h4 class="text-xl font-bold text-white">Culinary Delights</h4>
-            </div>
+        <!-- Gallery Container -->
+        <div id="galleryContainer" class="flex overflow-x-auto gap-4 pb-4 snap-x snap-mandatory hide-scrollbar">
+          <!-- Gallery items -->
+          <div class="flex-none w-[85vw] md:w-[70vw] lg:w-[calc(33.333%-1rem)] h-[35vh] relative overflow-hidden rounded-2xl shadow-lg group snap-start">
+            <img src="./assets/RENDER 001 (1).jpg" alt="Nature" class="w-full h-full object-cover">
           </div>
-        </div>
-        <div class="relative overflow-hidden rounded-2xl shadow-lg group">
-          <img src="./assets/RENDER 002.jpg" alt="Technology" class="w-full h-48 object-cover">
-          <div
-            class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div class="absolute bottom-0 left-0 right-0 p-4">
-              <h4 class="text-xl font-bold text-white">Tech Innovations</h4>
-            </div>
-          </div>
-        </div>
 
-        <!-- Three medium items -->
-        <div class="relative overflow-hidden rounded-2xl shadow-lg group">
-          <img src="./assets/RENDER 004.jpg" alt="Travel" class="w-full h-48 object-cover">
-          <div
-            class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div class="absolute bottom-0 left-0 right-0 p-4">
-              <h4 class="text-xl font-bold text-white">Travel Adventures</h4>
-            </div>
+          <div class="flex-none w-[85vw] md:w-[70vw] lg:w-[calc(33.333%-1rem)] h-[35vh] relative overflow-hidden rounded-2xl shadow-lg group snap-start">
+            <img src="./assets/RENDER 005.jpg" alt="Technology" class="w-full h-full object-cover">
           </div>
-        </div>
-        <div class="relative overflow-hidden rounded-2xl shadow-lg group">
-  <img src="./assets/RENDER 003.jpg" alt="Technology" class="w-full h-48 object-cover">
-          <div
-            class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div class="absolute bottom-0 left-0 right-0 p-4">
-              <h4 class="text-xl font-bold text-white">Artistic Expressions</h4>
-            </div>
-          </div>
-        </div>
 
-        <!-- bottom cards -->
-        <!-- <div class="relative overflow-hidden rounded-2xl shadow-lg group">
-          <img
-            src="https://images.unsplash.com/photo-1530549387789-4c1017266635?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwyfHxzd2ltbWluZ3xlbnwwfDB8fHwxNzIxMDQzMjkxfDA&ixlib=rb-4.0.3&q=80&w=1080"
-            alt="Sport" class="w-full h-48 object-cover">
-          <div
-            class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div class="absolute bottom-0 left-0 right-0 p-4">
-              <h4 class="text-xl font-bold text-white">Swimming</h4>
-            </div>
+          <div class="flex-none w-[85vw] md:w-[70vw] lg:w-[calc(33.333%-1rem)] h-[35vh] relative overflow-hidden rounded-2xl shadow-lg group snap-start">
+            <img src="./assets/RENDER 002.jpg" alt="Technology" class="w-full h-full object-cover">
+          </div>
+
+          <div class="flex-none w-[85vw] md:w-[70vw] lg:w-[calc(33.333%-1rem)] h-[35vh] relative overflow-hidden rounded-2xl shadow-lg group snap-start">
+            <img src="./assets/RENDER 004.jpg" alt="Travel" class="w-full h-full object-cover">
+          </div>
+
+          <div class="flex-none w-[85vw] md:w-[70vw] lg:w-[calc(33.333%-1rem)] h-[35vh] relative overflow-hidden rounded-2xl shadow-lg group snap-start">
+            <img src="./assets/RENDER 003.jpg" alt="Technology" class="w-full h-full object-cover">
           </div>
         </div>
-        <div class="relative overflow-hidden rounded-2xl shadow-lg group">
-          <img
-            src="https://images.unsplash.com/photo-1611195974226-a6a9be9dd763?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxMnx8Y2hlc3N8ZW58MHwwfHx8MTcyMTA0MzI0Nnww&ixlib=rb-4.0.3&q=80&w=1080"
-            alt="Sport" class="w-full h-48 object-cover">
-          <div
-            class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div class="absolute bottom-0 left-0 right-0 p-4">
-              <h4 class="text-xl font-bold text-white">Chess</h4>
-            </div>
-          </div>
-        </div>
-        <div class="relative overflow-hidden rounded-2xl shadow-lg group">
-          <img
-            src="https://images.unsplash.com/photo-1553778263-73a83bab9b0c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw1fHxmb290YmFsbHxlbnwwfDB8fHwxNzIxMDQzMjExfDA&ixlib=rb-4.0.3&q=80&w=1080"
-            alt="Sport" class="w-full h-48 object-cover">
-          <div
-            class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div class="absolute bottom-0 left-0 right-0 p-4">
-              <h4 class="text-xl font-bold text-white">Football</h4>
-            </div>
-          </div>
-        </div>
-        <div class="relative overflow-hidden rounded-2xl shadow-lg group">
-          <img
-            src="https://images.unsplash.com/photo-1624526267942-ab0ff8a3e972?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw3fHxjcmlja2V0fGVufDB8MHx8fDE3MjEwNDMxNTh8MA&ixlib=rb-4.0.3&q=80&w=1080"
-            alt="Sport" class="w-full h-48 object-cover">
-          <div
-            class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div class="absolute bottom-0 left-0 right-0 p-4">
-              <h4 class="text-xl font-bold text-white">Cricket</h4>
-            </div>
-          </div>
-        </div>
-      </div> -->
+      </div>
     </div>
   </section>
+
 
   <footer
     class="bg-[#1B1C24] text-white rounded-tl-[40px] rounded-tr-[40px] px-6 md:px-16 lg:px-24 pt-16 pb-8 max-w-full mx-auto">
@@ -761,7 +705,7 @@
           </span>
           <a href="mailto:info@codename-northhinjewadi.com" class="hover:text-[#cf6f35] transition">info@codename-northhinjewadi.com</a>
           <p>
-            Contact: <a href="tel:+911234567890" class="hover:text-[#cf6f35] transition">+91 123-456-7890</a>
+            Contact: <a href="tel:+917410106638" class="hover:text-[#cf6f35] transition">+91 7410106638</a>
           </p>
 
           <p>
@@ -791,7 +735,7 @@
         <!-- Scan QR Code -->
         <div class="flex flex-col items-center">
           <h3 class="text-lg font-semibold">Scan QR Code</h3>
-          <img src="https://via.placeholder.com/160x160?text=QR+Code" alt="Scan QR Code" class="w-40 h-auto mt-4" />
+          <img src="./assets/WhatsApp Image 2025-06-06 at 12.03.13_946a7b99.jpg" alt="Scan QR Code" class="w-40 h-auto mt-4" />
         </div>
       </div>
 
