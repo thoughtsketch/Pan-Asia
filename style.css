@@ -121,23 +121,23 @@
   transform: scale(0.8) translateZ(-200px);
 }
 
-.nav-button {
+/* .nav-button {
   transition: all 0.3s;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-}
+} */
 
 @media (hover: hover) {
-  .nav-button:hover {
+  /* .nav-button:hover {
     background: rgba(255, 255, 255, 0.2);
     transform: scale(1.1);
-  }
+  } */
 }
 
-.nav-button:active {
+/* .nav-button:active {
   transform: scale(0.95);
-}
+} */
 
 .progress-bar {
   transition: width 0.5s cubic-bezier(0.23, 1, 0.32, 1);
@@ -622,37 +622,24 @@ td {
 /* RESPONSIVE DESIGN */
 @media (max-width: 767px) {
   /* Hide the mobile menu dropdown by default on mobile */
-  nav .md\:hidden {
-    display: none !important; /* Ensure it's hidden by default */
+  /* nav .md\:hidden {
+    display: none !important;
     position: static;
     margin-top: 0;
     padding: 1rem;
     background-color: rgba(0, 0, 0, 0.9);
     border-bottom-left-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
-  }
+  } */
 
   /* Alpine.js will override display: none when isOpen is true */
-  nav .md\:hidden[x-show] {
-    display: block !important; /* Override the default hide when x-show is active */
-  }
+  /* nav .md\:hidden[x-show] {
+    display: block !important;
+  } */
 
   /* Ensure hero section is not obscured by mobile menu */
   .hero-section {
     margin-top: 0;
-  }
-
-  /* Adjust padding for the main navbar content for smaller screens if needed */
-  nav .relative.px-6.sm\:px-12.py-5 {
-    padding-left: 1.5rem; /* Adjust padding as necessary */
-    padding-right: 1.5rem; /* Adjust padding as necessary */
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }
-
-  /* Adjust logo height on mobile if needed */
-  nav img.h-14 {
-    height: 3.5rem; /* Example: reduced height for mobile */
   }
 }
 

@@ -12,6 +12,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -41,26 +43,37 @@
     body {
       font-family: 'Poppins', sans-serif;
     }
-    h1, h2, h3, h4, h5, h6 {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
       font-family: 'Poppins', sans-serif;
       font-weight: 600;
     }
+
     .benefits-title {
       font-family: 'Poppins', sans-serif;
       font-weight: 700;
     }
+
     .benefits-description {
       font-family: 'Poppins', sans-serif;
       font-weight: 400;
     }
+
     .proximity-head {
       font-family: 'Poppins', sans-serif;
       font-weight: 600;
     }
+
     .service-title {
       font-family: 'Poppins', sans-serif;
       font-weight: 600;
     }
+
     .service-description {
       font-family: 'Poppins', sans-serif;
       font-weight: 400;
@@ -68,11 +81,15 @@
 
     /* Gallery Scroll Styles */
     .hide-scrollbar {
-      -ms-overflow-style: none;  /* IE and Edge */
-      scrollbar-width: none;  /* Firefox */
+      -ms-overflow-style: none;
+      /* IE and Edge */
+      scrollbar-width: none;
+      /* Firefox */
     }
+
     .hide-scrollbar::-webkit-scrollbar {
-      display: none;  /* Chrome, Safari and Opera */
+      display: none;
+      /* Chrome, Safari and Opera */
     }
 
     /* Smooth scrolling for gallery */
@@ -85,6 +102,7 @@
     .gallery-item {
       transition: transform 0.3s ease;
     }
+
     .gallery-item:hover {
       transform: scale(1.02);
     }
@@ -143,7 +161,8 @@
               <label class="inline-flex items-start space-x-2">
                 <input type="checkbox" id="termsCheckbox" class="mt-1 form-checkbox h-4 w-4 text-primary">
                 <span class="text-sm text-gray-600 leading-snug">
-                  I authorize Codename North Hinjawadi and its representatives to Call, SMS, Email, or WhatsApp me about its products
+                  I authorize Codename North Hinjawadi and its representatives to Call, SMS, Email, or WhatsApp me about
+                  its products
                   and offers. This consent overrides any registration for DNC / NDNC.
                 </span>
               </label>
@@ -159,63 +178,54 @@
     </div>
   </div>
 
-  <!-- Navbar -->
-  <nav x-data="{ isOpen: false }"
-    class="w-full z-50 bg-black/90 backdrop-blur-md shadow-lg border-b border-white/10">
-    <!-- Main Navbar Content -->
-    <div class="relative px-6 sm:px-12 py-5">
-      <div class="flex items-center justify-between">
-        <!-- Logo -->
-        <div class="flex items-center space-x-3 group">
-          <img src="./assets/CODENAME North Hinjewadi-01.png" alt="EstatePrime Logo" class="h-14 w-auto">
-        </div>
+  <nav x-data="{ isOpen: false }" class="bg-black text-white px-6 py-4 shadow-md relative">
+    <div class="flex justify-between items-center">
+      <!-- Logo -->
+      <div>
+        <img src="./assets/CODENAME North Hinjewadi-01.png" alt="Logo" class="h-10">
+      </div>
 
-        <!-- Desktop Navigation -->
-        <div class="hidden md:flex items-center space-x-12">
-          <a href="#" class="text-white/70 hover:text-primary transition font-medium">Home</a>
-          <a href="#about" class="text-white/70 hover:text-primary transition font-medium">About</a>
-          <a href="#gallery" class="text-white/70 hover:text-primary transition font-medium">Gallery</a>
-          <a href="https://maps.app.goo.gl/Kd1KPZjwDNpRgdNb7" target="_blank" rel="noopener noreferrer" 
-            class="text-white/70 hover:text-primary transition font-medium">
-            Location
-          </a>
-        </div>
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex space-x-6">
+        <a href="#" class="hover:text-red-500">Home</a>
+        <a href="#about" class="hover:text-red-500">About</a>
+        <a href="#gallery" class="hover:text-red-500">Gallery</a>
+        <a href="https://maps.app.goo.gl/Kd1KPZjwDNpRgdNb7" target="_blank" class="hover:text-red-500">Location</a>
+      </div>
 
-        <!-- Right Side CTA -->
-        <div class="hidden sm:flex">
-          <a href="tel:+911234567890" class="relative group">
-            <span class="absolute inset-0 bg-gradient-to-r from-primary to-primary-hover rounded-lg blur opacity-20 group-hover:opacity-30 transition duration-300"></span>
-            <div class="relative px-6 py-2 bg-black/60 text-white rounded-lg border border-primary font-semibold hover:scale-105 transition duration-300">
-              +91 7410106638
-            </div>
-          </a>
-        </div>
+      <!-- CTA -->
+      <div class="hidden sm:flex">
+        <a href="tel:+917410106638"
+          class="px-4 py-2 border border-red-500 text-red-500 rounded hover:bg-red-500 hover:text-white transition">
+          +91 7410106638
+        </a>
+      </div>
 
-        <!-- Mobile Menu Button -->
-        <button @click="isOpen = !isOpen" class="md:hidden text-white" aria-label="Toggle mobile menu">
-          <svg x-show="!isOpen" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <!-- Mobile Toggle -->
+      <button @click="isOpen = !isOpen"
+        class="md:hidden w-10 h-10 flex items-center justify-center text-red-500 border border-red-500 rounded">
+        <template x-if="!isOpen">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
-          <svg x-show="isOpen" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        </template>
+        <template x-if="isOpen">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
-        </button>
-      </div>
+        </template>
+      </button>
+    </div>
 
-      <!-- Mobile Menu Dropdown -->
-      <div x-show="isOpen" x-transition
-        class="mt-4 md:hidden bg-black/40 backdrop-blur-md p-4 rounded-lg space-y-2">
-        <a href="#" class="block text-white/80 hover:text-primary transition">Home</a>
-        <a href="#about" class="block text-white/80 hover:text-primary transition">About</a>
-        <a href="#gallery" class="block text-white/80 hover:text-primary transition">Gallery</a>
-        <a href="https://maps.app.goo.gl/Kd1KPZjwDNpRgdNb7" target="_blank" rel="noopener noreferrer" 
-          class="text-white/70 hover:text-primary transition font-medium">
-          Location
-        </a>
-        <button class="w-full mt-4 bg-primary text-black py-2 rounded-lg font-semibold hover:bg-primary-hover transition">
-          +91 7410106638
-        </button>
-      </div>
+    <!-- Mobile Menu -->
+    <div x-show="isOpen" x-transition class="md:hidden mt-4 space-y-2 bg-gray-900 rounded p-4">
+      <a href="#" class="block text-white hover:text-red-400">Home</a>
+      <a href="#about" class="block text-white hover:text-red-400">About</a>
+      <a href="#gallery" class="block text-white hover:text-red-400">Gallery</a>
+      <a href="https://maps.app.goo.gl/Kd1KPZjwDNpRgdNb7" target="_blank"
+        class="block text-white hover:text-red-400">Location</a>
+      <a href="tel:+917410106638" class="block text-center mt-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">+91
+        7410106638</a>
     </div>
   </nav>
 
@@ -226,28 +236,30 @@
           <!-- Slide 1 -->
           <div class="hs-carousel-slide flex-shrink-0 w-full h-auto">
             <div class="relative w-full h-auto">
-              <img src="./assets/Banner_1920x1080_DesktopBanner render.jpg" class="w-full h-full object-contain" alt="Slide 1" />
+              <img src="./assets/Banner_1920x1080_DesktopBanner render.jpg" class="w-full h-full object-contain"
+                alt="Slide 1" />
             </div>
           </div>
 
           <!-- Slide 2 -->
           <div class="hs-carousel-slide flex-shrink-0 w-full h-auto">
             <div class="relative w-full h-auto">
-              <img src="./assets/Banner_1920x1080_DesktopBanner.jpg" class="w-full h-full object-contain" alt="Slide 2" />
+              <img src="./assets/Banner_1920x1080_DesktopBanner.jpg" class="w-full h-full object-contain"
+                alt="Slide 2" />
             </div>
           </div>
 
-        <!-- Indicator Dots -->
-        <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-2">
-          <button class="dot w-3 h-3 bg-white rounded-full opacity-50 hover:opacity-100 transition"
-            data-slide="0"></button>
-          <button class="dot w-3 h-3 bg-white rounded-full opacity-50 hover:opacity-100 transition"
-            data-slide="1"></button>
-          <button class="dot w-3 h-3 bg-white rounded-full opacity-50 hover:opacity-100 transition"
-            data-slide="2"></button>
+          <!-- Indicator Dots -->
+          <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-2">
+            <button class="dot w-3 h-3 bg-white rounded-full opacity-50 hover:opacity-100 transition"
+              data-slide="0"></button>
+            <button class="dot w-3 h-3 bg-white rounded-full opacity-50 hover:opacity-100 transition"
+              data-slide="1"></button>
+            <button class="dot w-3 h-3 bg-white rounded-full opacity-50 hover:opacity-100 transition"
+              data-slide="2"></button>
+          </div>
         </div>
       </div>
-    </div>
   </section>
 
   <!-- New About Section 1 -->
@@ -280,7 +292,8 @@
           </p>
           <div class="flex items-center gap-4">
             <div class="w-16 h-1 bg-[#cf6f35]"></div>
-            <span class="text-primary font-semibold hover:text-primary-hover transition cursor-pointer" onclick="openModal()">Download
+            <span class="text-primary font-semibold hover:text-primary-hover transition cursor-pointer"
+              onclick="openModal()">Download
               Brochure</span>
           </div>
         </div>
@@ -316,7 +329,8 @@
             eco-conscious lifestyle that's as peaceful as it is practical.</p>
           <div class="flex items-center gap-4">
             <div class="w-16 h-1 bg-[#cf6f35]"></div>
-            <span class="text-primary font-semibold hover:text-primary-hover transition cursor-pointer" onclick="openModal()">Download
+            <span class="text-primary font-semibold hover:text-primary-hover transition cursor-pointer"
+              onclick="openModal()">Download
               Brochure</span>
           </div>
         </div>
@@ -488,8 +502,8 @@
           <!-- Entrance Lobby -->
           <div class="block w-1/2 py-10 text-center border lg:w-1/4">
             <div>
-              <img src="./assets/icons/house.png" alt="Entrance Lobby Icon"
-                class="block mx-auto" style="width: 64px; height: 64px;">
+              <img src="./assets/icons/house.png" alt="Entrance Lobby Icon" class="block mx-auto"
+                style="width: 64px; height: 64px;">
               <p class="pt-4 text-sm font-medium capitalize font-body text-green-900 lg:text-lg md:text-base md:pt-6">
                 Entrance Lobby</p>
             </div>
@@ -508,8 +522,8 @@
           <!-- Recreation -->
           <div class="block w-1/2 py-10 text-center border lg:w-1/4">
             <div>
-              <img src="./assets/icons/time.png" alt="Recreation Icon"
-                class="block mx-auto" style="width: 64px; height: 64px;">
+              <img src="./assets/icons/time.png" alt="Recreation Icon" class="block mx-auto"
+                style="width: 64px; height: 64px;">
               <p class="pt-4 text-sm font-medium capitalize font-body text-green-900 lg:text-lg md:text-base md:pt-6">
                 Recreation</p>
             </div>
@@ -518,8 +532,8 @@
           <!-- Power Backup -->
           <div class="block w-1/2 py-10 text-center border lg:w-1/4">
             <div>
-              <img src="./assets/icons/generator.png" alt="Power Backup Icon"
-                class="block mx-auto" style="width: 64px; height: 64px;">
+              <img src="./assets/icons/generator.png" alt="Power Backup Icon" class="block mx-auto"
+                style="width: 64px; height: 64px;">
               <p class="pt-4 text-sm font-medium capitalize font-body text-green-900 lg:text-lg md:text-base md:pt-6">
                 Power Backup</p>
             </div>
@@ -528,8 +542,8 @@
           <!-- EV Charging -->
           <div class="block w-1/2 py-10 text-center border lg:w-1/4">
             <div>
-              <img src="./assets/icons/charging-station.png" alt="EV Charging Icon"
-                class="block mx-auto" style="width: 64px; height: 64px;">
+              <img src="./assets/icons/charging-station.png" alt="EV Charging Icon" class="block mx-auto"
+                style="width: 64px; height: 64px;">
               <p class="pt-4 text-sm font-medium capitalize font-body text-green-900 lg:text-lg md:text-base md:pt-6">EV
                 Charging</p>
             </div>
@@ -538,8 +552,8 @@
           <!-- Elevators -->
           <div class="block w-1/2 py-10 text-center border lg:w-1/4">
             <div>
-              <img src="./assets/icons/elevator.png" alt="Elevators Icon"
-                class="block mx-auto" style="width: 64px; height: 64px;">
+              <img src="./assets/icons/elevator.png" alt="Elevators Icon" class="block mx-auto"
+                style="width: 64px; height: 64px;">
               <p class="pt-4 text-sm font-medium capitalize font-body text-green-900 lg:text-lg md:text-base md:pt-6">
                 Elevators</p>
             </div>
@@ -548,8 +562,8 @@
           <!-- Solar Power -->
           <div class="block w-1/2 py-10 text-center border lg:w-1/4">
             <div>
-              <img src="./assets/icons/solar-panel.png" alt="Solar Power Icon"
-                class="block mx-auto" style="width: 64px; height: 64px;">
+              <img src="./assets/icons/solar-panel.png" alt="Solar Power Icon" class="block mx-auto"
+                style="width: 64px; height: 64px;">
               <p class="pt-4 text-sm font-medium capitalize font-body text-green-900 lg:text-lg md:text-base md:pt-6">
                 Solar Power</p>
             </div>
@@ -658,12 +672,14 @@
       </div>
       <div class="relative">
         <!-- Scroll Buttons -->
-        <button onclick="scrollGallery('left')" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-300">
+        <button onclick="scrollGallery('left')"
+          class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-300">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
           </svg>
         </button>
-        <button onclick="scrollGallery('right')" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-300">
+        <button onclick="scrollGallery('right')"
+          class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-300">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
           </svg>
@@ -672,30 +688,34 @@
         <!-- Gallery Container -->
         <div id="galleryContainer" class="flex overflow-x-auto gap-4 pb-4 snap-x snap-mandatory hide-scrollbar">
           <!-- Gallery items -->
-          <div class="flex-none w-[85vw] md:w-[70vw] lg:w-[calc(33.333%-1rem)] h-[35vh] relative overflow-hidden rounded-2xl shadow-lg group snap-start">
+          <div
+            class="flex-none w-[85vw] md:w-[70vw] lg:w-[calc(33.333%-1rem)] h-[35vh] relative overflow-hidden rounded-2xl shadow-lg group snap-start">
             <img src="./assets/RENDER 001 (1).jpg" alt="Nature" class="w-full h-full object-cover">
           </div>
 
-          <div class="flex-none w-[85vw] md:w-[70vw] lg:w-[calc(33.333%-1rem)] h-[35vh] relative overflow-hidden rounded-2xl shadow-lg group snap-start">
+          <div
+            class="flex-none w-[85vw] md:w-[70vw] lg:w-[calc(33.333%-1rem)] h-[35vh] relative overflow-hidden rounded-2xl shadow-lg group snap-start">
             <img src="./assets/RENDER 005.jpg" alt="Technology" class="w-full h-full object-cover">
           </div>
 
-          <div class="flex-none w-[85vw] md:w-[70vw] lg:w-[calc(33.333%-1rem)] h-[35vh] relative overflow-hidden rounded-2xl shadow-lg group snap-start">
+          <div
+            class="flex-none w-[85vw] md:w-[70vw] lg:w-[calc(33.333%-1rem)] h-[35vh] relative overflow-hidden rounded-2xl shadow-lg group snap-start">
             <img src="./assets/RENDER 002.jpg" alt="Technology" class="w-full h-full object-cover">
           </div>
 
-          <div class="flex-none w-[85vw] md:w-[70vw] lg:w-[calc(33.333%-1rem)] h-[35vh] relative overflow-hidden rounded-2xl shadow-lg group snap-start">
+          <div
+            class="flex-none w-[85vw] md:w-[70vw] lg:w-[calc(33.333%-1rem)] h-[35vh] relative overflow-hidden rounded-2xl shadow-lg group snap-start">
             <img src="./assets/RENDER 004.jpg" alt="Travel" class="w-full h-full object-cover">
           </div>
 
-          <div class="flex-none w-[85vw] md:w-[70vw] lg:w-[calc(33.333%-1rem)] h-[35vh] relative overflow-hidden rounded-2xl shadow-lg group snap-start">
+          <div
+            class="flex-none w-[85vw] md:w-[70vw] lg:w-[calc(33.333%-1rem)] h-[35vh] relative overflow-hidden rounded-2xl shadow-lg group snap-start">
             <img src="./assets/RENDER 003.jpg" alt="Technology" class="w-full h-full object-cover">
           </div>
         </div>
       </div>
     </div>
   </section>
-
 
   <footer
     class="bg-[#1B1C24] text-white rounded-tl-[40px] rounded-tr-[40px] px-6 md:px-16 lg:px-24 pt-16 pb-8 max-w-full mx-auto">
@@ -710,19 +730,16 @@
           <span class="bg-[#cf6f35] text-white font-semibold px-2 py-1 rounded-md inline-block w-fit">
             Contact us:
           </span>
-          <a href="mailto:info@codename-northhinjewadi.com" class="hover:text-[#cf6f35] transition">info@codename-northhinjewadi.com</a>
+          <a href="mailto:info@codename-northhinjewadi.com"
+            class="hover:text-[#cf6f35] transition">info@codename-northhinjewadi.com</a>
           <p>
             Contact: <a href="tel:+917410106638" class="hover:text-[#cf6f35] transition">+91 7410106638</a>
           </p>
 
           <p>
-            Address: 
-            <a
-              href="https://maps.app.goo.gl/Kd1KPZjwDNpRgdNb7"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="hover:text-[#cf6f35] transition"
-            >
+            Address:
+            <a href="https://maps.app.goo.gl/Kd1KPZjwDNpRgdNb7" target="_blank" rel="noopener noreferrer"
+              class="hover:text-[#cf6f35] transition">
               Codename North Hinjewadi<br />
               Kasarsai, Maharashtra 410506
             </a>
@@ -735,14 +752,14 @@
         <!-- Strategic Partner -->
         <div class="flex flex-col items-center">
           <h3 class="text-lg font-semibold">Strategic Partner</h3>
-          <img src="./assets/maestro logo white.webp" alt="Strategic Partner"
-            class="w-40 h-auto mt-4" />
+          <img src="./assets/maestro logo white.webp" alt="Strategic Partner" class="w-40 h-auto mt-4" />
         </div>
 
         <!-- Scan QR Code -->
         <div class="flex flex-col items-center">
           <h3 class="text-lg font-semibold">Scan QR Code</h3>
-          <img src="./assets/WhatsApp Image 2025-06-06 at 12.03.13_946a7b99.jpg" alt="Scan QR Code" class="w-40 h-auto mt-4" />
+          <img src="./assets/WhatsApp Image 2025-06-06 at 12.03.13_946a7b99.jpg" alt="Scan QR Code"
+            class="w-40 h-auto mt-4" />
         </div>
       </div>
 
@@ -765,7 +782,11 @@
       <p class="underline hover:text-[#cf6f35] transition cursor-pointer">Terms & Condition</p>
     </div>
   </footer>
+
 </body>
+
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
 <script src="script.js"></script>
 
 </html>
